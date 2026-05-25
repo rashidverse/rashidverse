@@ -1,4 +1,5 @@
 ## Hi there 👋
+WELCOM TO RASHIDVERSE
 
 <!--
 **rashidverse/rashidverse** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
