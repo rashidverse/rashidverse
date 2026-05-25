@@ -97,7 +97,7 @@ export default function RepeaterPluginsPage() {
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M13 2 5 13h6l-1 9 9-13h-6l1-7Z" fill="currentColor" />
             </svg>
-            Rashid ACF & SCF Supported <span className="rp-accent">Repeater</span> for Elementor
+            Ritu Akter ACF & SCF Supported <span className="rp-accent">Repeater</span> for Elementor
           </div>
 
           <h1 className="rp-hero-title">
