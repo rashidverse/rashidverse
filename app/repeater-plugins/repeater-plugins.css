@@ -81,7 +81,7 @@
   z-index: 1;
   width: min(100%, 1360px);
   margin: 0 auto;
-  padding: 0 28px 72px;
+  padding: 0 0px 0px;
 }
 
 .rp-page-shell::before {
