@@ -979,7 +979,7 @@ export default function RepeaterPluginsPage() {
                       Get Repeater Builder
                     </a>
 
-                    <small>30-Day Money-Back Guarantee</small>
+                    <small>If you want you can suppot us</small>
                   </article>
                 </div>
               </div>
