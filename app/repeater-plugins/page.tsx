@@ -97,7 +97,7 @@ export default function RepeaterPluginsPage() {
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M13 2 5 13h6l-1 9 9-13h-6l1-7Z" fill="currentColor" />
             </svg>
-            Ritu Akter ACF & SCF Supported <span className="rp-accent">Repeater</span> for Elementor
+            ACF & SCF Supported<span className="rp-accent">Repeater</span> for Elementor
           </div>
 
           <h1 className="rp-hero-title">
@@ -967,11 +967,12 @@ export default function RepeaterPluginsPage() {
                 <div className="rp-pricing-content-right">
                   <article className="rp-pro-plan-card">
                     <h3>Pro Plan</h3>
+                  
                     <p>Best for professionals</p>
 
                     <div className="rp-plan-price">
-                      <strong>$59</strong>
-                      <span>/year</span>
+                      <strong>Free</strong>
+                      <span>/Life-time</span>
                     </div>
 
                     <a href="#pricing" className="rp-dark-pricing-button">
