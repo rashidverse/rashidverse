@@ -9,6 +9,7 @@ import {
   FaLinkedinIn,
   FaYoutube,
 } from "react-icons/fa";
+import PortfolioGallery from "./PortfolioGallery";
 
 const navItems = [
   { label: "Hero", href: "#hero", id: "hero" },
@@ -351,15 +352,19 @@ export default function PortfolioPage() {
           </div>
         </header>
 
-        {sections.map((section) => (
-          <section className="rv-section" id={section.id} key={section.id}>
-            <div className="rv-section-inner rv-fade-up">
-              <p className="rv-section-label">{section.label}</p>
-              <h2 className="rv-section-title">{section.title}</h2>
-              <p className="rv-section-text">{section.text}</p>
-            </div>
-          </section>
-        ))}
+        {sections.map((section) =>
+          section.id === "projects" ? (
+            <PortfolioGallery key={section.id} />
+          ) : (
+            <section className="rv-section" id={section.id} key={section.id}>
+              <div className="rv-section-inner rv-fade-up">
+                <p className="rv-section-label">{section.label}</p>
+                <h2 className="rv-section-title">{section.title}</h2>
+                <p className="rv-section-text">{section.text}</p>
+              </div>
+            </section>
+          ),
+        )}
       </main>
     </div>
   );
