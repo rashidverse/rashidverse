@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { collection, onSnapshot } from "firebase/firestore";
 import {
   type CSSProperties,
   type MouseEvent as ReactMouseEvent,
@@ -11,21 +11,26 @@ import {
   useRef,
   useState,
 } from "react";
+import { db } from "@/lib/firebase";
 import styles from "./PortfolioGallery.module.css";
 
-type PortfolioFilter = "all" | "web" | "photography" | "branding" | "ui";
-
 type PortfolioProject = {
-  id: number;
+  id: string;
   title: string;
-  meta: string;
-  categories: Exclude<PortfolioFilter, "all">[];
+  category: string;
+  link: string;
   image: string;
-  width: number;
-  height: number;
+  viewerImage: string;
+  order: number;
   columns: number;
   rows: number;
+  ratio: number;
 };
+
+type StoredProject = Omit<
+  PortfolioProject,
+  "columns" | "rows" | "ratio"
+>;
 
 type PortfolioCardStyle = CSSProperties & {
   "--portfolio-col": number;
@@ -35,181 +40,25 @@ type PortfolioCardStyle = CSSProperties & {
 
 type HoverDirection = "top" | "right" | "bottom" | "left";
 
-const filters: { value: PortfolioFilter; label: string }[] = [
-  { value: "all", label: "All" },
-  { value: "web", label: "Web Design" },
-  { value: "photography", label: "Photo" },
-  { value: "branding", label: "Branding" },
-  { value: "ui", label: "UI Design" },
-];
+const COLLECTION_NAME = "portfolio";
 
-const projects: PortfolioProject[] = [
-  {
-    id: 1,
-    title: "Kent Brant Concept",
-    meta: "Design · Branding",
-    categories: ["web", "branding"],
-    image: "/portfolio/project-01.webp",
-    width: 460,
-    height: 305,
-    columns: 1,
-    rows: 1,
-  },
-  {
-    id: 2,
-    title: "Old Cars on Street",
-    meta: "Photography · Development",
-    categories: ["photography"],
-    image: "/portfolio/project-02.webp",
-    width: 456,
-    height: 305,
-    columns: 1,
-    rows: 1,
-  },
-  {
-    id: 3,
-    title: "Mobile UI Interface",
-    meta: "Development · Branding",
-    categories: ["branding"],
-    image: "/portfolio/project-03.webp",
-    width: 919,
-    height: 611,
-    columns: 2,
-    rows: 2,
-  },
-  {
-    id: 4,
-    title: "Video Project",
-    meta: "Video · Branding",
-    categories: ["web"],
-    image: "/portfolio/project-04.webp",
-    width: 460,
-    height: 609,
-    columns: 1,
-    rows: 2,
-  },
-  {
-    id: 5,
-    title: "Barbershop Website",
-    meta: "Photography · Web",
-    categories: ["web", "branding"],
-    image: "/portfolio/project-05.webp",
-    width: 456,
-    height: 303,
-    columns: 1,
-    rows: 1,
-  },
-  {
-    id: 6,
-    title: "Man in Old Town",
-    meta: "Photography · UI",
-    categories: ["ui"],
-    image: "/portfolio/project-06.webp",
-    width: 456,
-    height: 303,
-    columns: 1,
-    rows: 1,
-  },
-  {
-    id: 7,
-    title: "YouTube Video Project",
-    meta: "Video · Web Design",
-    categories: ["branding", "photography"],
-    image: "/portfolio/project-07.webp",
-    width: 460,
-    height: 303,
-    columns: 1,
-    rows: 1,
-  },
-  {
-    id: 8,
-    title: "Mobile UI Interface",
-    meta: "Development · UI",
-    categories: ["ui", "web"],
-    image: "/portfolio/project-08.webp",
-    width: 457,
-    height: 303,
-    columns: 1,
-    rows: 1,
-  },
-  {
-    id: 9,
-    title: "Project Vimeo",
-    meta: "Development · Video",
-    categories: ["ui", "photography"],
-    image: "/portfolio/project-09.webp",
-    width: 460,
-    height: 304,
-    columns: 1,
-    rows: 1,
-  },
-  {
-    id: 10,
-    title: "Architecture Agency",
-    meta: "Development · Web Design",
-    categories: ["web"],
-    image: "/portfolio/project-10.webp",
-    width: 456,
-    height: 304,
-    columns: 1,
-    rows: 1,
-  },
-  {
-    id: 11,
-    title: "Corporate Website",
-    meta: "Development · Web Design",
-    categories: ["web", "photography"],
-    image: "/portfolio/project-11.webp",
-    width: 460,
-    height: 612,
-    columns: 1,
-    rows: 2,
-  },
-  {
-    id: 12,
-    title: "Personal Website",
-    meta: "Development · Web Design",
-    categories: ["web", "ui"],
-    image: "/portfolio/project-12.webp",
-    width: 457,
-    height: 303,
-    columns: 1,
-    rows: 1,
-  },
-  {
-    id: 13,
-    title: "Corporate Website",
-    meta: "Development · Web Design",
-    categories: ["photography"],
-    image: "/portfolio/project-13.webp",
-    width: 460,
-    height: 305,
-    columns: 1,
-    rows: 1,
-  },
-  {
-    id: 14,
-    title: "Personal Portfolio",
-    meta: "Development · Web Design",
-    categories: ["branding", "ui"],
-    image: "/portfolio/project-14.webp",
-    width: 456,
-    height: 305,
-    columns: 1,
-    rows: 1,
-  },
-  {
-    id: 15,
-    title: "Fashion Website",
-    meta: "Development · Web Design",
-    categories: ["ui"],
-    image: "/portfolio/project-15.webp",
-    width: 457,
-    height: 306,
-    columns: 1,
-    rows: 1,
-  },
-];
+const layoutPattern = [
+  { columns: 1, rows: 1, ratio: 460 / 305 },
+  { columns: 1, rows: 1, ratio: 456 / 305 },
+  { columns: 2, rows: 2, ratio: 919 / 611 },
+  { columns: 1, rows: 2, ratio: 460 / 609 },
+  { columns: 1, rows: 1, ratio: 456 / 303 },
+  { columns: 1, rows: 1, ratio: 456 / 303 },
+  { columns: 1, rows: 1, ratio: 460 / 303 },
+  { columns: 1, rows: 1, ratio: 457 / 303 },
+  { columns: 1, rows: 1, ratio: 460 / 304 },
+  { columns: 1, rows: 1, ratio: 456 / 304 },
+  { columns: 1, rows: 2, ratio: 460 / 612 },
+  { columns: 1, rows: 1, ratio: 457 / 303 },
+  { columns: 1, rows: 1, ratio: 460 / 305 },
+  { columns: 1, rows: 1, ratio: 456 / 305 },
+  { columns: 1, rows: 1, ratio: 457 / 306 },
+] as const;
 
 const transformByDirection: Record<HoverDirection, string> = {
   top: "translate3d(0,-100%,0)",
@@ -241,23 +90,80 @@ function isTouchLayout() {
 }
 
 export default function PortfolioGallery() {
-  const [activeFilter, setActiveFilter] = useState<PortfolioFilter>("all");
-  const [touchOpenId, setTouchOpenId] = useState<number | null>(null);
+  const [projects, setProjects] = useState<PortfolioProject[]>([]);
+  const [activeFilter, setActiveFilter] = useState("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState("");
   const sectionRef = useRef<HTMLElement>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const lastFocusedElement = useRef<HTMLElement | null>(null);
   const touchStartX = useRef<number | null>(null);
 
+  useEffect(() => {
+    const unsubscribe = onSnapshot(
+      collection(db, COLLECTION_NAME),
+      (snapshot) => {
+        const storedProjects = snapshot.docs
+          .map((projectDocument): StoredProject | null => {
+            const data = projectDocument.data();
+            const title = String(data.title ?? "").trim();
+            const image = String(data.thumb ?? "").trim();
+
+            if (!title || !image) return null;
+
+            return {
+              id: projectDocument.id,
+              title,
+              category: String(data.category ?? "Uncategorized").trim(),
+              link: String(data.link ?? "").trim(),
+              image,
+              viewerImage: String(data.hoverImg ?? image).trim() || image,
+              order: Number(data.order) || 0,
+            };
+          })
+          .filter((project): project is StoredProject => project !== null)
+          .sort((first, second) => first.order - second.order);
+
+        setProjects(
+          storedProjects.map((project, index) => ({
+            ...project,
+            ...layoutPattern[index % layoutPattern.length],
+          })),
+        );
+        setLoadError("");
+        setLoading(false);
+      },
+      (error) => {
+        setLoadError(`Projects could not be loaded: ${error.message}`);
+        setLoading(false);
+      },
+    );
+
+    return unsubscribe;
+  }, []);
+
+  const filters = useMemo(() => {
+    const categories = Array.from(
+      new Set(projects.map((project) => project.category)),
+    );
+
+    return ["all", ...categories];
+  }, [projects]);
+
+  useEffect(() => {
+    if (activeFilter !== "all" && !filters.includes(activeFilter)) {
+      setActiveFilter("all");
+    }
+  }, [activeFilter, filters]);
+
   const visibleProjects = useMemo(
     () =>
       activeFilter === "all"
         ? projects
-        : projects.filter((project) =>
-            project.categories.includes(activeFilter),
-          ),
-    [activeFilter],
+        : projects.filter((project) => project.category === activeFilter),
+    [activeFilter, projects],
   );
 
   const activeProject =
@@ -269,9 +175,13 @@ export default function PortfolioGallery() {
     const gallery = galleryRef.current;
     if (!section || !gallery || window.innerWidth <= 560) return;
 
-    const columns = window.innerWidth <= 820 ? 2 : window.innerWidth <= 1080 ? 3 : 4;
+    const columns =
+      window.innerWidth <= 820 ? 2 : window.innerWidth <= 1080 ? 3 : 4;
     const columnWidth = gallery.clientWidth / columns;
-    section.style.setProperty("--portfolio-cell-height", `${columnWidth * 0.662}px`);
+    section.style.setProperty(
+      "--portfolio-cell-height",
+      `${columnWidth * 0.662}px`,
+    );
   }, []);
 
   useEffect(() => {
@@ -298,7 +208,9 @@ export default function PortfolioGallery() {
     (delta: number) => {
       setLightboxIndex((current) => {
         if (current === null || visibleProjects.length === 0) return current;
-        return (current + delta + visibleProjects.length) % visibleProjects.length;
+        return (
+          (current + delta + visibleProjects.length) % visibleProjects.length
+        );
       });
     },
     [visibleProjects.length],
@@ -352,9 +264,8 @@ export default function PortfolioGallery() {
     overlay.style.transform = outsidePosition;
   };
 
-  const selectFilter = (filter: PortfolioFilter) => {
+  const selectFilter = (filter: string) => {
     setActiveFilter(filter);
-    setTouchOpenId(null);
     setLightboxIndex(null);
   };
 
@@ -367,14 +278,6 @@ export default function PortfolioGallery() {
 
     lastFocusedElement.current = trigger;
     setLightboxIndex(index);
-  };
-
-  const handleCardClick = (
-    projectId: number,
-    event: ReactMouseEvent<HTMLElement>,
-  ) => {
-    if (!isTouchLayout() || (event.target as HTMLElement).closest("button")) return;
-    setTouchOpenId((current) => (current === projectId ? null : projectId));
   };
 
   const handleLightboxTouchStart = (event: ReactTouchEvent<HTMLDivElement>) => {
@@ -395,6 +298,7 @@ export default function PortfolioGallery() {
       id="projects"
       ref={sectionRef}
       aria-label="Selected portfolio projects"
+      aria-busy={loading}
     >
       <div className={styles.filterBar}>
         <div className={styles.filterTitle}>
@@ -404,18 +308,22 @@ export default function PortfolioGallery() {
           <span>Portfolio Filter</span>
         </div>
 
-        <div className={styles.filterButtons} role="group" aria-label="Portfolio filters">
+        <div
+          className={styles.filterButtons}
+          role="group"
+          aria-label="Portfolio filters"
+        >
           {filters.map((filter) => {
-            const isActive = activeFilter === filter.value;
+            const isActive = activeFilter === filter;
             return (
               <button
                 className={`${styles.filterButton}${isActive ? ` ${styles.activeFilter}` : ""}`}
-                key={filter.value}
+                key={filter}
                 type="button"
                 aria-pressed={isActive}
-                onClick={() => selectFilter(filter.value)}
+                onClick={() => selectFilter(filter)}
               >
-                {filter.label}
+                {filter === "all" ? "All" : filter}
               </button>
             );
           })}
@@ -429,30 +337,59 @@ export default function PortfolioGallery() {
       </div>
 
       <div className={styles.gallery} ref={galleryRef}>
+        {loading || loadError ? (
+          <p
+            role="status"
+            style={{
+              gridColumn: "1 / -1",
+              margin: 0,
+              padding: "48px",
+              color: "#9b9ba4",
+              textAlign: "center",
+            }}
+          >
+            {loadError || "Loading projects..."}
+          </p>
+        ) : null}
+
         {visibleProjects.map((project) => {
           const cardStyle: PortfolioCardStyle = {
             "--portfolio-col": project.columns,
             "--portfolio-row": project.rows,
-            "--portfolio-ratio": project.width / project.height,
+            "--portfolio-ratio": project.ratio,
+            cursor: project.link ? "pointer" : "default",
           };
 
           return (
             <article
-              className={`${styles.card}${touchOpenId === project.id ? ` ${styles.touchOpen}` : ""}`}
+              className={styles.card}
               key={project.id}
               style={cardStyle}
               onMouseEnter={(event) => animateOverlay(event, true)}
               onMouseLeave={(event) => animateOverlay(event, false)}
-              onClick={(event) => handleCardClick(project.id, event)}
             >
               <div className={styles.cardMedia}>
-                <Image
+                <img
                   className={styles.cardImage}
                   src={project.image}
                   alt={project.title}
-                  fill
-                  sizes="(max-width: 560px) calc(100vw - 54px), (max-width: 820px) 50vw, (max-width: 1080px) 33vw, 25vw"
+                  loading="lazy"
+                  decoding="async"
                 />
+
+                {project.link ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${project.title} project`}
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      zIndex: 8,
+                    }}
+                  />
+                ) : null}
 
                 <button
                   className={styles.zoom}
@@ -474,7 +411,7 @@ export default function PortfolioGallery() {
                   <div className={styles.hoverInner}>
                     <div className={styles.hoverCopy}>
                       <h3>{project.title}</h3>
-                      <p>{project.meta}</p>
+                      <p>{project.category}</p>
                     </div>
                   </div>
                 </div>
@@ -524,18 +461,16 @@ export default function PortfolioGallery() {
           </button>
 
           <figure className={styles.lightboxFigure}>
-            <Image
+            <img
               className={styles.lightboxImage}
-              src={activeProject.image}
+              src={activeProject.viewerImage}
               alt={activeProject.title}
-              width={activeProject.width}
-              height={activeProject.height}
-              sizes="(max-width: 560px) calc(100vw - 112px), calc(100vw - 190px)"
-              priority
+              loading="eager"
+              decoding="async"
             />
             <figcaption className={styles.lightboxCaption}>
               <strong>{activeProject.title}</strong>
-              <span>{activeProject.meta}</span>
+              <span>{activeProject.category}</span>
             </figcaption>
           </figure>
 
