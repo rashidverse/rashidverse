@@ -1,9 +1,9 @@
-const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
-  images: {
-    unoptimized: true,
-  },
-};
+'use client';
 
-export default nextConfig;
+export default function AdminPage() {
+  return (
+    <main>
+      <h1>Admin Dashboard</h1>
+    </main>
+  );
+}
