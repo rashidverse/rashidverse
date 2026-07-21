@@ -1,6 +1,7 @@
 "use client";
 
 import { collection, onSnapshot } from "firebase/firestore";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   type CSSProperties,
   type MouseEvent as ReactMouseEvent,
@@ -300,18 +301,39 @@ export default function PortfolioGallery() {
       aria-label="Selected portfolio projects"
       aria-busy={loading}
     >
-      <div className={styles.filterBar}>
-        <div className={styles.filterTitle}>
-          <span className={styles.filterSymbol} aria-hidden="true">
-            <span />
-          </span>
-          <span>Portfolio Filter</span>
-        </div>
-
-        <div
+      <motion.header
+        className={styles.portfolioHeader}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+      >
+        <motion.h2
+          className={styles.portfolioHeading}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55, delay: 0.1 }}
+        >
+          Design. Develop. Deliver. WordPress Excellence.
+        </motion.h2>
+        <motion.p
+          className={styles.portfolioIntro}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55, delay: 0.18 }}
+        >
+          From idea to launch — I build clean, responsive, and powerful WordPress websites.
+        </motion.p>
+        <motion.div
           className={styles.filterButtons}
           role="group"
           aria-label="Portfolio filters"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55, delay: 0.26 }}
         >
           {filters.map((filter) => {
             const isActive = activeFilter === filter;
@@ -327,14 +349,14 @@ export default function PortfolioGallery() {
               </button>
             );
           })}
-        </div>
-
-        <div className={styles.counter} aria-live="polite">
+        </motion.div>
+        <p className={styles.srOnly} aria-live="polite">
           <span className={styles.visibleCount}>{visibleProjects.length}</span>
-          <span className={styles.counterSeparator} aria-hidden="true" />
+          <span> of </span>
           <span className={styles.totalCount}>{projects.length}</span>
-        </div>
-      </div>
+          <span> projects shown</span>
+        </p>
+      </motion.header>
 
       <div className={styles.gallery} ref={galleryRef}>
         {loading || loadError ? (
@@ -352,22 +374,28 @@ export default function PortfolioGallery() {
           </p>
         ) : null}
 
-        {visibleProjects.map((project) => {
-          const cardStyle: PortfolioCardStyle = {
-            "--portfolio-col": project.columns,
-            "--portfolio-row": project.rows,
-            "--portfolio-ratio": project.ratio,
-            cursor: project.link ? "pointer" : "default",
-          };
+        <AnimatePresence mode="popLayout" initial={false}>
+          {visibleProjects.map((project, index) => {
+            const cardStyle: PortfolioCardStyle = {
+              "--portfolio-col": project.columns,
+              "--portfolio-row": project.rows,
+              "--portfolio-ratio": project.ratio,
+              cursor: project.link ? "pointer" : "default",
+            };
 
-          return (
-            <article
-              className={styles.card}
-              key={project.id}
-              style={cardStyle}
-              onMouseEnter={(event) => animateOverlay(event, true)}
-              onMouseLeave={(event) => animateOverlay(event, false)}
-            >
+            return (
+              <motion.article
+                className={styles.card}
+                key={project.id}
+                layout
+                initial={{ opacity: 0, scale: 0.96, y: 18 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.96, y: -12 }}
+                transition={{ duration: 0.35, delay: Math.min(index * 0.035, 0.25) }}
+                style={cardStyle}
+                onMouseEnter={(event) => animateOverlay(event, true)}
+                onMouseLeave={(event) => animateOverlay(event, false)}
+              >
               <div className={styles.cardMedia}>
                 <img
                   className={styles.cardImage}
@@ -416,9 +444,10 @@ export default function PortfolioGallery() {
                   </div>
                 </div>
               </div>
-            </article>
-          );
-        })}
+              </motion.article>
+            );
+          })}
+        </AnimatePresence>
       </div>
 
       <div className={styles.order}>

@@ -48,6 +48,12 @@ const sections = [
     title: "About Me",
     text: "A passionate creative professional combining design expertise with technical development skills. Bringing ideas to life through purposeful visuals, fluid interfaces, and cinematic motion.",
   },
+   {
+    id: "projects",
+    label: "My Work",
+    title: "Projects",
+    text: "A curated collection of websites, motion pieces, brand identities, and digital campaigns crafted with precision and creative intent.",
+  },
   {
     id: "resume",
     label: "My Journey",
@@ -60,12 +66,7 @@ const sections = [
     title: "Skills",
     text: "WordPress, Elementor, PHP, HTML, CSS, JavaScript, Adobe Premiere Pro, After Effects, Photoshop, Illustrator, and a full creative production toolkit.",
   },
-  {
-    id: "projects",
-    label: "My Work",
-    title: "Projects",
-    text: "A curated collection of websites, motion pieces, brand identities, and digital campaigns crafted with precision and creative intent.",
-  },
+ 
   {
     id: "clients",
     label: "Trusted By",

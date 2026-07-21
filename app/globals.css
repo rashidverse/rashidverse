@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
 :root {
+  /* A single typeface is used across the complete site. */
+  --font-barlow-condensed: var(--font-barlow);
+  --font-oswald: var(--font-barlow);
+  --font-sora: var(--font-barlow);
+  --font-inter: var(--font-barlow);
+  --font-jetbrains-mono: var(--font-barlow);
   --rv-yellow: #f5c518;
   --rv-dark: #1a1a1e;
   --rv-sidebar-w: 65px;
@@ -172,7 +178,7 @@ button {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   font-family: var(--font-barlow-condensed), sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -462,7 +468,7 @@ button:focus-visible {
 .rv-tag {
   color: var(--rv-yellow);
   font-family: var(--font-barlow-condensed), sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 2.5px;
   opacity: 0.85;
@@ -492,7 +498,7 @@ button:focus-visible {
   gap: 10px;
   color: rgba(255, 255, 255, 0.7);
   font-family: var(--font-barlow-condensed), sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 2.5px;
   text-decoration: none;
@@ -614,7 +620,7 @@ button:focus-visible {
   background: transparent;
   color: rgba(255, 255, 255, 0.45);
   font-family: var(--font-barlow-condensed), sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 2.5px;
   text-transform: uppercase;
@@ -661,7 +667,7 @@ button:focus-visible {
   padding: 0 18px;
   color: rgba(255, 255, 255, 0.4);
   font-family: var(--font-barlow-condensed), sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 2.5px;
   text-decoration: none;
@@ -776,7 +782,7 @@ button:focus-visible {
   margin: 0 0 20px;
   color: var(--rv-yellow);
   font-family: var(--font-barlow-condensed), sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 4px;
   text-transform: uppercase;
