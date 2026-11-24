@@ -1,0 +1,288 @@
+/* Global Contact Drawer — used by Home, Portfolio, and any future page. */
+.rv-contact-trigger {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    z-index: 100001 !important;
+    display: grid !important;
+    width: 80px !important;
+    height: 80px !important;
+    place-items: center;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: #f5c518 !important;
+    color: #151518 !important;
+    font-size: 19px !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    cursor: pointer;
+    transition: background .25s ease, color .25s ease !important;
+}
+
+.rv-contact-trigger:hover {
+    background: #151518 !important;
+    color: #f5c518 !important;
+}
+
+.rv-contact-trigger:focus-visible,
+.rv-contact-close:focus-visible,
+.rv-contact-link:focus-visible {
+    outline: 2px solid #f5c518;
+    outline-offset: 3px;
+}
+
+.rv-contact-drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.rv-contact-drawer.is-open {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.rv-contact-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 4, 7, .78);
+    opacity: 0;
+    transition: opacity .45s ease;
+}
+
+.rv-contact-drawer.is-open .rv-contact-backdrop { opacity: 1; }
+
+.rv-contact-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    width: min(960px, 70vw);
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1f2e, #0f1419);
+    box-shadow: -8px 0 32px rgba(0, 0, 0, .5);
+    transform: translateX(100%);
+    transition: transform .45s cubic-bezier(.25, .46, .45, .94);
+}
+
+.rv-contact-drawer.is-open .rv-contact-panel { transform: translateX(0); }
+
+.rv-contact-close {
+    position: absolute;
+    top: 10px;
+    left: 18px;
+    z-index: 5;
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 34px;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+
+.rv-contact-close:hover { transform: rotate(90deg); }
+
+.rv-contact-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    flex-direction: column;
+    padding: 70px 35px 32px;
+    overflow: auto;
+    color: #fff;
+    text-align: left;
+}
+
+.rv-contact-content h2 {
+    margin: 0 0 8px !important;
+    color: #fff;
+    font-size: clamp(38px, 4vw, 64px) !important;
+    font-weight: 700 !important;
+    letter-spacing: .5px;
+    line-height: 1.15;
+    text-align: left;
+}
+
+.rv-contact-role {
+    margin: 0 0 30px !important;
+    color: rgba(255, 255, 255, .6) !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    letter-spacing: 1.5px;
+    line-height: 1.45 !important;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.rv-contact-groups {
+    flex: 1;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    padding-top: 20px;
+}
+
+/* Reset the landing page's generic section styling inside the drawer. */
+.rv-contact-groups section {
+    position: static;
+    float: none;
+    width: auto;
+    margin: 0 0 28px;
+    padding: 0;
+    overflow: visible;
+    background: transparent;
+}
+
+.rv-contact-groups h3 {
+    margin: 0 0 12px !important;
+    color: rgba(255, 255, 255, .5) !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 2.5px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.rv-contact-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 16px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-left: 3px solid #777;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, .03);
+    color: #fff !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.35 !important;
+    text-decoration: none !important;
+    text-align: left;
+    transition: transform .3s ease, background .3s ease;
+}
+
+.rv-contact-link:hover {
+    background: rgba(255, 255, 255, .1);
+    color: #fff !important;
+    transform: translateX(6px);
+}
+
+.rv-contact-link--upwork { border-left-color: #70c02c; }
+.rv-contact-link--linkedin { border-left-color: #0077b6; }
+.rv-contact-link--resume { border-left-color: #ff9900; }
+.rv-contact-link--email { border-left-color: #e52d29; }
+.rv-contact-link--whatsapp { border-left-color: #25d366; }
+
+.rv-contact-section > div:not(.rv-contact-inline) {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rv-contact-section > div:not(.rv-contact-inline) .rv-contact-link {
+    margin-bottom: 0;
+}
+
+.rv-contact-inline { display: flex; gap: 10px; background: rgba(255, 255, 255, .03); border-radius: 5px; }
+.rv-contact-inline .rv-contact-link { flex: 0 0 auto; min-width: 110px; border-left-color: #777; text-align: left; }
+
+.rv-contact-icon {
+    display: inline-grid;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    place-items: center;
+    color: #fff;
+    font-size: 17px;
+    line-height: 1;
+}
+
+.rv-contact-icon--wordmark {
+    border-radius: 2px;
+    background: #fff;
+    color: #252936;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.rv-contact-upwork-icon {
+    display: block;
+    width: 17px;
+    height: 17px;
+    fill: currentColor;
+}
+
+.rv-contact-footer {
+    margin: 15px 0 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    padding-top: 20px;
+    color: rgba(255, 255, 255, .5) !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    text-align: center;
+}
+
+.rv-contact-photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    width: auto;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background: transparent;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.rv-contact-photo img {
+    display: block;
+    width: auto;
+    max-width: none !important;
+    height: 100vh;
+    /* The source cut-out preserves its own natural width at full panel height. */
+    object-fit: cover;
+    object-position: right bottom;
+}
+
+body.rv-contact-open { overflow: hidden; }
+
+@media (max-width: 1024px) {
+    .rv-contact-panel { width: min(720px, 76vw); }
+    .rv-contact-photo { width: auto; }
+    .rv-contact-content { width: auto; padding-right: 35px; }
+}
+
+@media (max-width: 720px) {
+    .rv-contact-trigger { width: 54px !important; height: 58px !important; }
+    .rv-contact-panel { width: min(100%, 620px); }
+    .rv-contact-content { width: auto; padding: 65px 24px 24px; }
+    .rv-contact-photo { right: 0; z-index: 1; width: auto; opacity: .51; }
+    .rv-contact-photo img { height: 100vh; }
+    .rv-contact-role { font-size: 14px !important; }
+    .rv-contact-content h2 { font-size: 40px !important; }
+    .rv-contact-groups section { margin-bottom: 20px; }
+}
+
+@media (max-width: 460px) {
+    .rv-contact-photo { display: none; }
+    .rv-contact-content { padding: 62px 20px 20px; }
+    .rv-contact-inline { display: grid; gap }
+    .rv-contact-content h2 { font-size: 34px !important; }
+    .rv-contact-role { font-size: 12px !important; }
+    .rv-contact-link { padding: 11px 13px; }
+}

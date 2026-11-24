@@ -1,0 +1,12 @@
+.control { position: relative; }
+.trigger { display: flex; width: 100%; align-items: center; justify-content: space-between; cursor: pointer; border: 1px solid #d9e0db; border-radius: 6px; background: #fff; padding: 10px; color: #212721; font: inherit; font-size: 14px; text-align: left; }
+.trigger:focus { border-color: #e0aa04; box-shadow: 0 0 0 3px rgba(245, 197, 24, .15); outline: 0; }
+.trigger span { margin: 0; color: #536058; font-size: 16px; }
+.menu { position: absolute; z-index: 30; top: calc(100% + 3px); left: 0; width: 100%; overflow: hidden; border: 1px solid #cfd7d1; border-radius: 7px; background: #fff; box-shadow: 0 12px 24px rgba(16, 28, 19, .18); }
+.menuHead { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-bottom: 1px solid #e4e8e5; font-size: 12px; }
+.menuHead button { cursor: pointer; border: 0; background: transparent; color: #171917; font: inherit; font-size: 12px; font-weight: 700; }
+.menuHead button:hover { color: #bc8500; }
+.options { display: grid; padding: 5px; }
+.options > span { padding: 9px; color: #7b857e; font-size: 12px; }
+.options button { cursor: pointer; border: 0; background: transparent; padding: 8px 10px; color: #263029; font: inherit; font-size: 13px; font-weight: 700; text-align: left; }
+.options button:hover, .selected { background: #edf1ee !important; }

@@ -1,0 +1,1842 @@
+{
+  "portfolio": [
+    {
+      "title": "Ki Keno Kivabe",
+      "link": "https://kikenokivabe.com/",
+      "category": "WordPress Design & Development",
+      "order": 0,
+      "thumb": "/uploads/portfolio/1785301341528-d436ba32-6e1e-4242-a1d1-8bcb39e74b1b.webp",
+      "thumbPath": "/uploads/portfolio/1785301341528-d436ba32-6e1e-4242-a1d1-8bcb39e74b1b.webp",
+      "hoverImg": "/uploads/portfolio/1785301341574-7e1e73b3-5d9f-4123-8dd3-d9cba3326b19.webp",
+      "hoverPath": "/uploads/portfolio/1785301341574-7e1e73b3-5d9f-4123-8dd3-d9cba3326b19.webp",
+      "id": "06f71870-87dc-40d1-844a-16b6d07fc644",
+      "createdAt": "2026-07-29T05:01:04.191Z",
+      "updatedAt": "2026-08-08T10:47:57.676Z",
+      "description": "",
+      "details": "",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "Elementor",
+      "featured": true,
+      "featuredOrder": 0,
+      "published": true,
+      "sectors": []
+    },
+    {
+      "title": "SERVICES CREATIVITE",
+      "description": "",
+      "details": "",
+      "link": "https://services.creativite.quebec/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "Elementor",
+      "featured": true,
+      "featuredOrder": 2,
+      "published": true,
+      "order": 2,
+      "thumb": "/uploads/media/Services-Creativite-Quebec-thumb.webp",
+      "thumbPath": "/uploads/media/Services-Creativite-Quebec-thumb.webp",
+      "hoverImg": "/uploads/media/Services-Créativité-Québec-mockup.webp",
+      "hoverPath": "/uploads/media/Services-Créativité-Québec-mockup.webp",
+      "category": "WordPress Design & Development",
+      "id": "9ef5f1e0-d21c-465c-be99-27b5fa6dca91",
+      "createdAt": "2026-07-29T06:17:29.738Z",
+      "updatedAt": "2026-08-02T12:33:02.785Z",
+      "sectors": []
+    },
+    {
+      "title": "FIRST CLASS LEARNING",
+      "description": "",
+      "details": "",
+      "link": "https://firstclasslearning.ae/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "Elementor",
+      "featured": true,
+      "featuredOrder": 3,
+      "published": true,
+      "order": 3,
+      "thumb": "/uploads/media/First-Class-Learning-Mockup-1.webp",
+      "thumbPath": "/uploads/media/First-Class-Learning-Mockup-1.webp",
+      "hoverImg": "/uploads/media/First-Class-Learning.ae.webp",
+      "hoverPath": "/uploads/media/First-Class-Learning.ae.webp",
+      "category": "WordPress Design & Development",
+      "id": "7eb56fa4-a6d5-4b2a-b9e5-f429f3295888",
+      "createdAt": "2026-07-29T06:52:52.547Z",
+      "updatedAt": "2026-08-02T12:33:04.329Z",
+      "sectors": []
+    },
+    {
+      "title": "OMAC INVESTABILL",
+      "description": "",
+      "details": "",
+      "link": "https://www.investabill.com/omac/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "WPBakery",
+      "featured": true,
+      "featuredOrder": 4,
+      "published": true,
+      "order": 4,
+      "thumb": "/uploads/media/omac---Investabill-thumbnail.webp",
+      "thumbPath": "/uploads/media/omac---Investabill-thumbnail.webp",
+      "hoverImg": "/uploads/media/omac---Investabill.webp",
+      "hoverPath": "/uploads/media/omac---Investabill.webp",
+      "category": "WordPress Design & Development",
+      "id": "81a21107-1ce9-494d-befb-ea657242fd4a",
+      "createdAt": "2026-07-29T06:56:59.384Z",
+      "updatedAt": "2026-08-02T12:33:06.096Z",
+      "sectors": []
+    },
+    {
+      "title": "INVESTABILL OMAA",
+      "description": "",
+      "details": "",
+      "link": "https://www.investabill.com/omaaa/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "WPBakery",
+      "featured": true,
+      "featuredOrder": 5,
+      "published": true,
+      "order": 0,
+      "thumb": "/uploads/media/Invistabil-omaa.webp",
+      "thumbPath": "/uploads/media/Invistabil-omaa.webp",
+      "hoverImg": "/uploads/media/Omaaa - Investabill.webp",
+      "hoverPath": "/uploads/media/Omaaa - Investabill.webp",
+      "category": "WordPress Design & Development",
+      "id": "b1b8a086-96c8-4ea7-8c92-ff356ea3df90",
+      "createdAt": "2026-07-29T06:58:40.741Z",
+      "updatedAt": "2026-08-02T12:33:01.847Z",
+      "sectors": []
+    },
+    {
+      "title": "Muenchen Marathon",
+      "description": "",
+      "details": "",
+      "link": "https://www.muenchenmarathon.de/en/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "Elementor",
+      "featured": true,
+      "featuredOrder": 6,
+      "published": true,
+      "order": 6,
+      "thumb": "/uploads/media/Muenchen-Marathon-thumb.webp",
+      "thumbPath": "/uploads/media/Muenchen-Marathon-thumb.webp",
+      "hoverImg": "/uploads/media/Munich-Marathon-mockup.webp",
+      "hoverPath": "/uploads/media/Munich-Marathon-mockup.webp",
+      "sectors": [],
+      "category": "WordPress Design & Development",
+      "id": "2f4f4bde-0347-4614-bb01-903bd86f5ba1",
+      "createdAt": "2026-08-09T05:05:57.035Z",
+      "updatedAt": "2026-08-09T05:06:45.041Z"
+    },
+    {
+      "title": "Aspire Pilates Studio",
+      "description": "",
+      "details": "",
+      "link": "https://www.aspirepilatesstudio.com.au/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "DIVI",
+      "featured": true,
+      "featuredOrder": 7,
+      "published": true,
+      "order": 7,
+      "thumb": "/uploads/media/Aspire-Pilates-Atudio.webp",
+      "thumbPath": "/uploads/media/Aspire-Pilates-Atudio.webp",
+      "hoverImg": "/uploads/media/aspirepilatesstudio.com.au.webp",
+      "hoverPath": "/uploads/media/aspirepilatesstudio.com.au.webp",
+      "sectors": [],
+      "category": "WordPress Design & Development",
+      "id": "174d658c-31e6-4644-802e-a508cf8bfc4b",
+      "createdAt": "2026-08-09T05:17:39.754Z",
+      "updatedAt": "2026-08-09T05:17:39.754Z"
+    },
+    {
+      "title": "Omab Investabill",
+      "description": "",
+      "details": "",
+      "link": "https://www.investabill.com/omab/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "WPBakery",
+      "featured": true,
+      "featuredOrder": 8,
+      "published": true,
+      "order": 8,
+      "thumb": "/uploads/media/Ommb-Invistabill.webp",
+      "thumbPath": "/uploads/media/Ommb-Invistabill.webp",
+      "hoverImg": "/uploads/media/Omab Investabill.webp",
+      "hoverPath": "/uploads/media/Omab Investabill.webp",
+      "sectors": [],
+      "category": "WordPress Design & Development",
+      "id": "2954c53f-97d6-4d3e-aaed-6f12f524678c",
+      "createdAt": "2026-08-09T05:19:41.554Z",
+      "updatedAt": "2026-08-09T05:19:41.554Z"
+    },
+    {
+      "title": "Jowel Visual",
+      "description": "",
+      "details": "",
+      "link": "https://www.jowelvisual.com/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "Elementor",
+      "featured": true,
+      "featuredOrder": 9,
+      "published": true,
+      "order": 9,
+      "thumb": "/uploads/media/jowelvisual.webp",
+      "thumbPath": "/uploads/media/jowelvisual.webp",
+      "hoverImg": "/uploads/media/Jowelvisual-hover.webp",
+      "hoverPath": "/uploads/media/Jowelvisual-hover.webp",
+      "sectors": [],
+      "category": "WordPress Design & Development",
+      "id": "a22fc545-dd57-4130-8497-723f5ccfce81",
+      "createdAt": "2026-08-09T05:22:05.313Z",
+      "updatedAt": "2026-08-09T05:22:05.313Z"
+    },
+    {
+      "title": "Adu Design Build",
+      "description": "",
+      "details": "",
+      "link": "https://adudesignbuild.com/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "Elementor",
+      "featured": true,
+      "featuredOrder": 9,
+      "published": true,
+      "order": 9,
+      "thumb": "/uploads/media/ADU-Design-Build-Mockup.webp",
+      "thumbPath": "/uploads/media/ADU-Design-Build-Mockup.webp",
+      "hoverImg": "/uploads/media/ADU-Design-Build.webp",
+      "hoverPath": "/uploads/media/ADU-Design-Build.webp",
+      "sectors": [],
+      "category": "WordPress Design & Development",
+      "id": "9fa67bb5-cc51-4f0f-9392-c35838d09698",
+      "createdAt": "2026-08-09T08:28:14.747Z",
+      "updatedAt": "2026-08-09T08:28:14.747Z"
+    },
+    {
+      "title": "Omad Investabill",
+      "description": "",
+      "details": "",
+      "link": "https://www.investabill.com/omad/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "WPBakery",
+      "featured": true,
+      "featuredOrder": 10,
+      "published": true,
+      "order": 10,
+      "thumb": "/uploads/media/omad---Investabill-thumbnail.webp",
+      "thumbPath": "/uploads/media/omad---Investabill-thumbnail.webp",
+      "hoverImg": "/uploads/media/omad---Investabill.webp",
+      "hoverPath": "/uploads/media/omad---Investabill.webp",
+      "sectors": [],
+      "category": "WordPress Design & Development",
+      "id": "c2e55be0-9934-4700-95c5-2f4bcecc16b6",
+      "createdAt": "2026-08-09T08:36:03.392Z",
+      "updatedAt": "2026-08-09T08:36:03.392Z"
+    },
+    {
+      "title": "Credebt Exchange",
+      "description": "",
+      "details": "",
+      "link": "https://web.credebtexchange.com/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "WPBakery",
+      "featured": true,
+      "featuredOrder": 11,
+      "published": true,
+      "order": 11,
+      "thumb": "/uploads/media/Credebt-Exchange-Mockup.webp",
+      "thumbPath": "/uploads/media/Credebt-Exchange-Mockup.webp",
+      "hoverImg": "/uploads/media/Credebt-Exchange.webp",
+      "hoverPath": "/uploads/media/Credebt-Exchange.webp",
+      "sectors": [],
+      "category": "WordPress Design & Development",
+      "id": "3d7f744d-6a55-414b-a25b-07929191b199",
+      "createdAt": "2026-08-09T08:51:01.816Z",
+      "updatedAt": "2026-08-09T08:51:01.816Z"
+    },
+    {
+      "title": "IDLA Solutions",
+      "description": "",
+      "details": "",
+      "link": "https://idlasolutions.com/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "Elementor",
+      "featured": true,
+      "featuredOrder": 12,
+      "published": true,
+      "order": 12,
+      "thumb": "/uploads/media/IDLA-Mockup.webp",
+      "thumbPath": "/uploads/media/IDLA-Mockup.webp",
+      "hoverImg": "/uploads/media/IDLA-New.webp",
+      "hoverPath": "/uploads/media/IDLA-New.webp",
+      "sectors": [],
+      "category": "WordPress Design & Development",
+      "id": "1f99561d-de43-46ac-96f4-06d94977b728",
+      "createdAt": "2026-08-09T08:54:19.778Z",
+      "updatedAt": "2026-08-09T08:54:19.778Z"
+    },
+    {
+      "title": "Credebt Commodities",
+      "description": "",
+      "details": "",
+      "link": "https://credebtcommodities.com/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "WPBakery",
+      "featured": true,
+      "featuredOrder": 12,
+      "published": true,
+      "order": 12,
+      "thumb": "/uploads/media/COMMODITIES.webp",
+      "thumbPath": "/uploads/media/COMMODITIES.webp",
+      "hoverImg": "/uploads/media/COMMODITIES full.webp",
+      "hoverPath": "/uploads/media/COMMODITIES full.webp",
+      "sectors": [],
+      "category": "WordPress Design & Development",
+      "id": "e1e31fcd-11f6-4d56-818b-a2a261190119",
+      "createdAt": "2026-08-09T09:12:36.684Z",
+      "updatedAt": "2026-08-09T09:12:36.684Z"
+    },
+    {
+      "title": "Credebt Shipping",
+      "description": "",
+      "details": "",
+      "link": "https://credebtshipping.com/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "WPBakery",
+      "featured": true,
+      "featuredOrder": 13,
+      "published": true,
+      "order": 13,
+      "thumb": "/uploads/media/Tread Creadebt (2).webp",
+      "thumbPath": "/uploads/media/Tread Creadebt (2).webp",
+      "hoverImg": "/uploads/media/Credebt Shipping.png",
+      "hoverPath": "/uploads/media/Credebt Shipping.png",
+      "sectors": [],
+      "category": "WordPress Design & Development",
+      "id": "7f2f2ae5-17a5-4491-9d66-29be818612a6",
+      "createdAt": "2026-08-09T09:20:17.941Z",
+      "updatedAt": "2026-08-09T09:20:17.941Z"
+    },
+    {
+      "title": "Extra Ordinaryhcr",
+      "description": "",
+      "details": "",
+      "link": "https://extraordinaryhcr.com/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "Elementor",
+      "featured": true,
+      "featuredOrder": 14,
+      "published": true,
+      "order": 1,
+      "thumb": "/uploads/media/Extra Ordinaryhcr (2).jpg",
+      "thumbPath": "/uploads/media/Extra Ordinaryhcr (2).jpg",
+      "hoverImg": "/uploads/media/Extra Ordinaryhcr Full.webp",
+      "hoverPath": "/uploads/media/Extra Ordinaryhcr Full.webp",
+      "sectors": [],
+      "category": "WordPress Design & Development",
+      "id": "60cb9829-0135-4b97-9df3-90385205532f",
+      "createdAt": "2026-08-09T10:20:36.276Z",
+      "updatedAt": "2026-08-09T11:49:34.244Z"
+    },
+    {
+      "title": "World of TheraPeutics",
+      "description": "",
+      "details": "",
+      "link": "https://speechwot.com/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "Elementor",
+      "featured": false,
+      "featuredOrder": 0,
+      "published": true,
+      "order": 0,
+      "thumb": "/uploads/media/World of TheraPeutics.webp",
+      "thumbPath": "/uploads/media/World of TheraPeutics.webp",
+      "hoverImg": "/uploads/media/World of TheraPeutics Full.webp",
+      "hoverPath": "/uploads/media/World of TheraPeutics Full.webp",
+      "sectors": [],
+      "category": "WordPress Design & Development",
+      "id": "c6c1c157-bb6b-443a-b72c-9fb81a276bc9",
+      "createdAt": "2026-08-09T11:47:42.828Z",
+      "updatedAt": "2026-08-09T11:50:02.351Z"
+    },
+    {
+      "title": "Amigo Clothing",
+      "description": "",
+      "details": "",
+      "link": "https://amigoclothing.be/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "Elementor",
+      "featured": false,
+      "featuredOrder": 0,
+      "published": true,
+      "order": 0,
+      "thumb": "/uploads/media/Amigo Clothing.webp",
+      "thumbPath": "/uploads/media/Amigo Clothing.webp",
+      "hoverImg": "/uploads/media/Amigo Clothing full.webp",
+      "hoverPath": "/uploads/media/Amigo Clothing full.webp",
+      "sectors": [],
+      "category": "WordPress Design & Development",
+      "id": "b0293b34-721e-48be-bc8b-8334a22a40c4",
+      "createdAt": "2026-08-09T12:18:28.940Z",
+      "updatedAt": "2026-08-09T12:18:28.940Z"
+    },
+    {
+      "title": "Fly Ingingot",
+      "description": "",
+      "details": "",
+      "link": "https://flyingingot.com/",
+      "mainCategory": "WordPress Design & Development",
+      "subcategory": "Elementor",
+      "featured": false,
+      "featuredOrder": 0,
+      "published": true,
+      "order": 0,
+      "thumb": "/uploads/media/Fly Ingingot.webp",
+      "thumbPath": "/uploads/media/Fly Ingingot.webp",
+      "hoverImg": "/uploads/media/Fly Ingingot Full.webp",
+      "hoverPath": "/uploads/media/Fly Ingingot Full.webp",
+      "sectors": [],
+      "category": "WordPress Design & Development",
+      "id": "1b99d909-19c5-41f6-bebe-892237a8b482",
+      "createdAt": "2026-08-09T12:31:00.057Z",
+      "updatedAt": "2026-08-14T04:06:05.919Z"
+    }
+  ],
+  "experience": [
+    {
+      "company": "CERCO CREATIVE MARKETING",
+      "role": "Senior WordPress Developer / Multimedia Designer",
+      "period": "Canada | Remote |  Feb 2026 - Running",
+      "summary": "I develop and customize WordPress websites for a multidisciplinary Canadian agency, combining reliable technical functionality with brand-consistent, user-focused design. My role also involves quality assurance, troubleshooting, and supporting creative digital requirements.",
+      "highlights": [
+        "Develop and customize responsive WordPress websites",
+        "Build custom functionality using PHP and WordPress tools",
+        "Translate UI/UX designs into pixel-accurate web pages",
+        "Test usability and performance across devices and browsers",
+        "Troubleshoot plugin, theme, and website performance issues"
+      ],
+      "order": 1,
+      "layout": "standard",
+      "image": "/uploads/media/Cerco 2.webp",
+      "imagePath": "/uploads/media/Cerco 2.webp",
+      "id": "37a4b8e6-54fa-4e24-958b-07f63fe43820",
+      "createdAt": "2026-07-26T08:55:20.583Z",
+      "updatedAt": "2026-08-03T07:30:35.513Z",
+      "sectors": [],
+      "buttonText": "View Work +",
+      "buttonLink": "/wordpress/portfolio/",
+      "buttonTarget": "same",
+      "imageLink": "https://cerco.design/",
+      "imageLinkTarget": "new"
+    },
+    {
+      "company": "CREDEBT",
+      "role": "Senior WordPress Developer",
+      "period": "Ireland | Remote | Sep 2025- Feb 2026",
+      "summary": "I developed, maintained, and expanded WordPress websites for CreDebt and its associated business platforms. The role involved technical customization, API integration, website improvements, and structured quality assurance across approximately nine internal company websites.",
+      "highlights": [
+        "Developed and maintained nine internal company websites",
+        "Implemented PHP and front-end WordPress customizations",
+        "Integrated REST APIs and third-party functionality",
+        "Improved responsive layouts and overall usability",
+        "Conducted regression testing, debugging, and release QA"
+      ],
+      "order": 2,
+      "layout": "image-right",
+      "image": "/uploads/media/Credebt.webp",
+      "imagePath": "/uploads/media/Credebt.webp",
+      "id": "d14d01b9-a90a-4524-a62d-78563b5c5b58",
+      "createdAt": "2026-07-26T09:29:18.147Z",
+      "updatedAt": "2026-08-03T09:28:49.971Z",
+      "sectors": [],
+      "buttonText": "View Work +",
+      "buttonLink": "/wordpress/portfolio/",
+      "buttonTarget": "same",
+      "imageLink": "https://www.credebt.com/",
+      "imageLinkTarget": "new"
+    },
+    {
+      "company": "CREATIVITE QUEBEC",
+      "role": "WordPress Developer & Front-End Designer",
+      "period": "Canada | Remote | Jun 2022 – Present",
+      "summary": "I build and enhance WordPress-based e-learning and business websites with a focus on clean front-end design, responsive performance, and reliable functionality. My work includes page-builder customization, technical improvements, troubleshooting, and ongoing website support.",
+      "highlights": [
+        "Built and enhanced multiple e-learning websites",
+        "Customized WordPress themes, plugins, and page builders",
+        "Created responsive and user-friendly front-end layouts",
+        "Fixed functionality, compatibility, and display issues",
+        "Supported website performance, maintenance, and QA"
+      ],
+      "order": 3,
+      "layout": "standard",
+      "image": "/uploads/media/CREATIVITE QUEBEC all.webp",
+      "imagePath": "/uploads/media/CREATIVITE QUEBEC all.webp",
+      "sectors": [],
+      "id": "4647ac9a-f746-4672-8063-55cb37f69b02",
+      "createdAt": "2026-08-02T06:45:46.658Z",
+      "updatedAt": "2026-08-03T10:44:53.185Z",
+      "buttonText": "View Work +",
+      "buttonLink": "/wordpress/portfolio/",
+      "buttonTarget": "same",
+      "imageLink": "https://creativite.quebec/",
+      "imageLinkTarget": "new"
+    },
+    {
+      "company": "EVOLOK",
+      "role": "WordPress Designer & Developer",
+      "period": "UK | Contractual | Dec 2023 – Jun 2024",
+      "summary": "I designed and developed two bespoke WordPress websites based on specific business, branding, and functionality requirements. Each website was built to provide a polished, responsive, and user-friendly digital experience.",
+      "highlights": [
+        "Designed and developed two bespoke WordPress websites",
+        "Created custom layouts aligned with brand requirements",
+        "Developed responsive pages for desktop, tablet, and mobile",
+        "Added and customized required website functionality",
+        "Tested and refined the websites before final delivery"
+      ],
+      "order": 4,
+      "layout": "no-image",
+      "image": "",
+      "imagePath": "",
+      "sectors": [],
+      "id": "23c131c3-3d16-4893-9022-766514deb3df",
+      "createdAt": "2026-08-02T07:03:54.664Z",
+      "updatedAt": "2026-08-02T07:23:07.283Z",
+      "buttonText": "View Work +",
+      "buttonLink": "",
+      "buttonTarget": "new",
+      "imageLink": "",
+      "imageLinkTarget": "same"
+    },
+    {
+      "company": "WEB BAY",
+      "role": "WordPress Designer & Developer",
+      "period": "Serbia | Contractual | Feb 2023 – Dec 2023",
+      "summary": "I contributed to the design and development of two dynamic WordPress websites, focusing on responsive interfaces, flexible content structures, and reliable functionality tailored to the project requirements.",
+      "highlights": [
+        "Contributed to two dynamic WordPress websites",
+        "Developed responsive and visually consistent layouts",
+        "Customized WordPress themes and website components",
+        "Added dynamic content and required functionality",
+        "Performed testing, troubleshooting, and final refinements"
+      ],
+      "order": 5,
+      "layout": "image-right",
+      "image": "",
+      "imagePath": "",
+      "sectors": [],
+      "id": "176bf589-665d-41fa-8159-b26369e0dfd2",
+      "createdAt": "2026-08-02T07:11:03.657Z",
+      "updatedAt": "2026-08-02T07:14:50.935Z",
+      "buttonText": "View Work +",
+      "buttonLink": "",
+      "buttonTarget": "new",
+      "imageLink": "",
+      "imageLinkTarget": "same"
+    },
+    {
+      "company": "POLYGON SOLUTIONS",
+      "role": "WordPress Designer & Developer",
+      "period": "USA | Contractual |  Sep 2021 – Feb 2022",
+      "summary": "I designed and developed WordPress websites for business requirements, transforming project ideas and visual directions into responsive, functional, and professionally presented online experiences.",
+      "highlights": [
+        "Designed and developed WordPress business websites",
+        "Converted project requirements into functional layouts",
+        "Customized pages, themes, and website components",
+        "Optimized layouts for different screen sizes",
+        "Tested functionality and resolved website issues"
+      ],
+      "order": 6,
+      "layout": "standard",
+      "image": "",
+      "imagePath": "",
+      "sectors": [],
+      "id": "4dfc8c94-30c6-42b6-9bf7-44704bcbb83d",
+      "createdAt": "2026-08-02T07:16:55.452Z",
+      "updatedAt": "2026-08-02T07:20:48.384Z",
+      "buttonText": "View Work +",
+      "buttonLink": "",
+      "buttonTarget": "new",
+      "imageLink": "",
+      "imageLinkTarget": "same"
+    },
+    {
+      "company": "UPWORK & DIRECT CLIENTS",
+      "role": "Freelance WordPress Designer & Developer",
+      "period": "Global · Remote Freelance |  Running",
+      "summary": "I work with international businesses, agencies, and entrepreneurs to design, develop, customize, and maintain WordPress websites tailored to their goals, branding, and required functionality. My freelance journey includes more than 100 successfully completed projects across multiple industries.",
+      "highlights": [
+        "Completed 115 jobs and recorded 973 working hours on Upwork",
+        "Maintained a 100% Job Success Score",
+        "Achieved a 5.0/5 rating from 94 client reviews",
+        "Delivered Elementor, WPBakery, WooCommerce, LMS, and business websites",
+        "Provided website redesign, maintenance, debugging, and ongoing support"
+      ],
+      "order": 7,
+      "layout": "image-right",
+      "image": "",
+      "imagePath": "",
+      "sectors": [],
+      "id": "cb320a6b-d49f-43c3-8e32-010e3e9f6945",
+      "createdAt": "2026-08-02T07:18:11.619Z",
+      "updatedAt": "2026-08-02T07:18:11.619Z",
+      "buttonText": "View Work +",
+      "buttonLink": "",
+      "buttonTarget": "new",
+      "imageLink": "",
+      "imageLinkTarget": "same"
+    }
+  ],
+  "experiencesettings": [
+    {
+      "sectionLabel": "My Resume",
+      "eyebrow": "PROFESSIONAL JOURNEY",
+      "heading": "REMOTE . [highlight]EXPERIENCE[/highlight] GLOBAL COLLABORATION.",
+      "description": "Over the past 6+ years, I have collaborated remotely with companies, agencies, and clients across Canada, Ireland, the USA, and global markets—delivering responsive WordPress websites, eCommerce solutions, custom functionality, and visually polished digital experiences.",
+      "buttonText": "Download Resume",
+      "buttonLink": "#",
+      "buttonTarget": "same",
+      "sectors": [],
+      "id": "704c9a29-4f97-4eb0-9514-c4fc4e24398d",
+      "createdAt": "2026-08-02T07:38:35.635Z",
+      "updatedAt": "2026-08-02T07:38:35.635Z"
+    },
+    {
+      "sectionLabel": "My Journey",
+      "eyebrow": "MY JOURNEY",
+      "heading": "From WordPress Development\nto [highlight]Security-First Solutions[/highlight]",
+      "description": "My WordPress journey started with website design and development. Over time, working with real-world websites exposed me to security vulnerabilities, configuration issues, performance problems, and complex technical challenges. Today, my work combines WordPress security, development, and custom plugin solutions to provide more complete and reliable website services.",
+      "buttonText": "Download Resume",
+      "buttonLink": "#",
+      "buttonTarget": "same",
+      "sectors": [
+        "wordpress"
+      ],
+      "id": "wordpress-security-experiencesettings",
+      "createdAt": "2026-08-02T07:38:35.635Z",
+      "updatedAt": "2026-08-02T07:38:35.635Z"
+    }
+  ],
+  "hero": [
+    {
+      "title": "WordPress Designer & Developer",
+      "categoryOne": "WordPress",
+      "categoryTwo": "",
+      "link": "/wordpress/portfolio",
+      "order": 1,
+      "image": "/uploads/media/WordPress Developer-BGM.webp",
+      "imagePath": "/uploads/media/WordPress Developer-BGM.webp",
+      "id": "14a0483f-7c59-4bb4-9cb1-437251ffa331",
+      "createdAt": "2026-07-26T12:28:21.604Z",
+      "updatedAt": "2026-08-14T05:29:50.916Z",
+      "overlayColor": "#000000",
+      "overlayOpacity": 40,
+      "sectors": [],
+      "profileLink": "/wordpress"
+    },
+    {
+      "title": "Video Editor & Motion Graphic Designer",
+      "categoryOne": "Video Editor",
+      "categoryTwo": "",
+      "link": "",
+      "order": 2,
+      "image": "/uploads/media/1785074019936-cb68b2c7-9ce8-43b5-a1ff-b8f4ff60e111.webp",
+      "imagePath": "/uploads/media/1785074019936-cb68b2c7-9ce8-43b5-a1ff-b8f4ff60e111.webp",
+      "id": "6e3b61f6-fec6-4748-a8f1-5607d297f3b6",
+      "createdAt": "2026-07-26T13:53:44.281Z",
+      "updatedAt": "2026-07-26T14:08:26.744Z",
+      "overlayColor": "#000000",
+      "overlayOpacity": 30
+    },
+    {
+      "title": "Multimedia Designer",
+      "categoryOne": "Graphic Desinger",
+      "categoryTwo": "",
+      "link": "",
+      "order": 3,
+      "image": "/uploads/media/1785074716998-ce46b164-54e1-4048-a9d6-0ffef7200f5a.webp",
+      "imagePath": "/uploads/media/1785074716998-ce46b164-54e1-4048-a9d6-0ffef7200f5a.webp",
+      "id": "d7c08d4f-eb10-4c80-9530-59a3c434ad7a",
+      "createdAt": "2026-07-26T13:55:59.919Z",
+      "updatedAt": "2026-07-26T14:08:46.944Z",
+      "overlayColor": "#000000",
+      "overlayOpacity": 40
+    }
+  ],
+  "about": [
+    {
+      "image": "/uploads/media/Rashid-Profile.webp",
+      "imagePath": "/uploads/media/Rashid-Profile.webp",
+      "description": "With 12+ years of experience across digital design and multimedia—including 6+ years specializing in WordPress—I create polished websites, custom functionality, brand visuals, and motion content that are both engaging and effective.",
+      "buttonLink": "portfolio.html",
+      "eyebrow": "MY EXPERTISE",
+      "sectionLabel": "Expertice",
+      "buttonText": "EXPLORE MY WORK",
+      "heading": "Design-Led [highlight]Creativity.[/highlight]  Development-Driven [highlight]Results.[/highlight]",
+      "imageLabel": "RashidVerse",
+      "features": [
+        {
+          "title": "WordPress Designer & Developer",
+          "description": "I design and develop responsive WordPress websites using Elementor WooCommerce, and custom solutions, with a focus on usability, performance, and visual quality.",
+          "icon": "fa-video",
+          "customIcon": "",
+          "iconifyIcon": "ic:baseline-wordpress"
+        },
+        {
+          "title": "Video Editor & Motion Graphic Designer",
+          "description": "I create polished video edits and motion graphics that turn ideas into engaging stories for brands, products, and digital campaigns.",
+          "icon": "fa-camera",
+          "customIcon": "",
+          "iconifyIcon": "streamline-ultimate:video-edit-cut-bold"
+        },
+        {
+          "title": "Mulimedia Designer",
+          "description": "I create brand identities, UI concepts, and digital assets that keep every visual touchpoint clear, consistent, and memorable.",
+          "icon": "fa-pagelines",
+          "customIcon": "",
+          "iconifyIcon": "iconoir:design-nib"
+        },
+        {
+          "title": "WordPress Plugins Developer",
+          "description": "I develop and customize WordPress plugins to add tailored functionality, streamline workflows, integrate APIs, and solve specific business needs.",
+          "icon": "fa-shopping-bag",
+          "customIcon": "",
+          "iconifyIcon": "hugeicons:web-design-02"
+        }
+      ],
+      "id": "5a9bc2b3-641d-4c95-b60c-1adaed9d42cc",
+      "createdAt": "2026-07-26T14:22:49.440Z",
+      "updatedAt": "2026-07-27T05:44:24.364Z"
+    },
+    {
+      "image": "/uploads/media/Rashid-Profile.webp",
+      "imagePath": "/uploads/media/Rashid-Profile.webp",
+      "description": "I'm Abdul Rashid, a WordPress Security Specialist, Designer, Developer, and Plugin Developer focused on building websites that are visually professional, secure, fast, stable, and maintainable. My approach combines WordPress security, development, performance optimization, and custom functionality—helping businesses solve technical problems while reducing website risks.",
+      "buttonLink": "/wordpress/portfolio/",
+      "eyebrow": "About Me",
+      "sectionLabel": "About Me",
+      "buttonText": "View My Work",
+      "heading": "Security-First WordPress\nSolutions That [highlight]Go Beyond Design[/highlight]",
+      "imageLabel": "RashidVerse",
+      "features": [
+        {
+          "title": "WordPress Security",
+          "description": "Security audits, WordPress hardening, vulnerability reduction, malware cleanup, security headers, firewall configuration, and ongoing protection.",
+          "icon": "fa-shield-alt",
+          "customIcon": "",
+          "iconifyIcon": ""
+        },
+        {
+          "title": "WordPress Development",
+          "description": "Responsive and scalable WordPress websites developed for businesses, professionals, eCommerce stores, and service-based companies.",
+          "icon": "fa-code",
+          "customIcon": "",
+          "iconifyIcon": ""
+        },
+        {
+          "title": "Plugin Development",
+          "description": "Custom WordPress plugins, features, integrations, and functionality developed around specific website and business requirements.",
+          "icon": "fa-puzzle-piece",
+          "customIcon": "",
+          "iconifyIcon": ""
+        },
+        {
+          "title": "Performance & Maintenance",
+          "description": "Speed optimization, troubleshooting, updates, technical maintenance, backups, and ongoing WordPress support.",
+          "icon": "fa-cogs",
+          "customIcon": "",
+          "iconifyIcon": ""
+        }
+      ],
+      "id": "wordpress-security-about",
+      "createdAt": "2026-07-26T14:22:49.440Z",
+      "updatedAt": "2026-07-27T05:44:24.364Z",
+      "sectors": [
+        "wordpress"
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "heading": "Some Interisting [highlight]Facts[/highlight]\nAbout Me",
+      "description": "We started as a small, subdue, called hath give fourth. Them one over saying. So the god, greater. You. Us air Moved divide midst us fifth sea .",
+      "subtitle": "Numbers",
+      "image": "/uploads/media/Interesting-about-Rashid.webp",
+      "imagePath": "/uploads/media/Interesting-about-Rashid.webp",
+      "overlayColor": "#000000",
+      "overlayOpacity": 40,
+      "items": [
+        {
+          "number": "114",
+          "label": "Finished projects"
+        },
+        {
+          "number": "357",
+          "label": "Happy customers"
+        },
+        {
+          "number": "973",
+          "label": "Working hours"
+        },
+        {
+          "number": "220",
+          "label": "Project from other Plaform"
+        }
+      ],
+      "id": "998bb677-0e67-43ff-bbb4-d24b76e9b741",
+      "createdAt": "2026-07-27T04:42:02.763Z",
+      "updatedAt": "2026-07-27T04:42:02.763Z"
+    }
+  ],
+  "video": [
+    {
+      "title": "My Video Presentation",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat.",
+      "videoUrl": "https://www.youtube.com/watch?v=2yNrrQFUU1U",
+      "buttonText": "My Youtube Channel",
+      "buttonLink": "https://www.youtube.com/@rashed99ful",
+      "image": "/uploads/media/1785074716998-ce46b164-54e1-4048-a9d6-0ffef7200f5a.webp",
+      "imagePath": "/uploads/media/1785074716998-ce46b164-54e1-4048-a9d6-0ffef7200f5a.webp",
+      "id": "b2db02d3-4b69-4594-a50e-4a172fe45d6e",
+      "createdAt": "2026-07-27T06:43:59.974Z",
+      "updatedAt": "2026-07-27T06:43:59.974Z"
+    }
+  ],
+  "process": [
+    {
+      "ctaText": "Need more info ? Visit my services page :",
+      "heading": "A SIMPLE, COLLABORATIVE [highlight]PROCESS [/highlight]",
+      "ctaButtonText": "My Services",
+      "sectionLabel": "How I Work",
+      "description": "From the first conversation to the final launch, I follow a clear three-step process that keeps every project aligned, transparent, and focused on quality.",
+      "steps": [
+        {
+          "icon": "fa-slideshare",
+          "customIcon": "",
+          "iconifyIcon": "",
+          "title": "Discover & Plan",
+          "subtitle": "Every successful project begins with clarity.",
+          "description": "I learn about your goals, audience, design preferences, content, and required functionality. Then I define the scope and create a clear plan for the project.",
+          "morePoints": [
+            "Your business, project goals, and target audience",
+            "Preferred design style, colors, and reference websites",
+            "Required pages, features, and functionality",
+            "Available content, branding assets, and images",
+            "Project scope, timeline, and key priorities"
+          ],
+          "linkText": "More Details",
+          "link": "#",
+          "linkTarget": "same"
+        },
+        {
+          "icon": "fa-laptop",
+          "customIcon": "",
+          "iconifyIcon": "",
+          "title": "Design & Develop",
+          "subtitle": "Turning ideas into a polished digital experience.",
+          "description": "I design and develop a responsive, user-friendly solution while sharing progress and refining the details based on your feedback.",
+          "morePoints": [
+            "Plan the website structure and user journey",
+            "Create a clean, brand-focused visual design",
+            "Develop responsive layouts for all devices",
+            "Add required features, forms, and integrations",
+            "Share progress and refine the work through feedback"
+          ],
+          "linkText": "More Details",
+          "link": "#",
+          "linkTarget": "same"
+        },
+        {
+          "icon": "fa-flag-checkered",
+          "customIcon": "",
+          "iconifyIcon": "",
+          "title": "Test, Approve & Launch",
+          "subtitle": "Every detail is checked before the final handover.",
+          "description": "I test the project across devices and browsers, review functionality and performance, complete the final revisions, and prepare everything for a smooth launch.",
+          "morePoints": [
+            "Test functionality, links, forms, and interactions",
+            "Review the website across devices and browsers",
+            "Improve performance and fix final issues",
+            "Complete revisions and receive final approval",
+            "Launch the project and provide a smooth handover"
+          ],
+          "linkText": "More Details",
+          "link": "#",
+          "linkTarget": "same"
+        }
+      ],
+      "eyebrow": "How I Work",
+      "ctaButtonLink": "services.html",
+      "id": "595ce3af-ac26-4834-bc34-229160ae31f0",
+      "createdAt": "2026-07-27T06:54:28.361Z",
+      "updatedAt": "2026-07-27T09:18:14.651Z",
+      "ctaButtonTarget": "same"
+    },
+    {
+      "ctaText": "Let’s discuss what your website needs.",
+      "heading": "My [highlight]Security-First[/highlight]\nWordPress Process",
+      "ctaButtonText": "Discuss Your Project",
+      "sectionLabel": "How I Work",
+      "description": "A clear four-step process for safer, faster, and more reliable WordPress websites.",
+      "steps": [
+        {
+          "title": "Audit & Understand",
+          "subtitle": "Understand the website and its risks.",
+          "description": "I begin by understanding the website, business requirements, current setup, security risks, and technical challenges.",
+          "icon": "fa-search",
+          "morePoints": [],
+          "linkText": "Discuss Your Project",
+          "link": "https://wa.me/8801720498825",
+          "linkTarget": "new"
+        },
+        {
+          "title": "Secure & Develop",
+          "subtitle": "Build on a secure foundation.",
+          "description": "I implement the required security improvements, development work, custom functionality, or performance optimization using a clean and structured approach.",
+          "icon": "fa-code",
+          "morePoints": [],
+          "linkText": "Discuss Your Project",
+          "link": "https://wa.me/8801720498825",
+          "linkTarget": "new"
+        },
+        {
+          "title": "Test & Verify",
+          "subtitle": "Check the details before delivery.",
+          "description": "The website is tested across security, functionality, responsiveness, compatibility, forms, performance, and critical user flows.",
+          "icon": "fa-check",
+          "morePoints": [],
+          "linkText": "Discuss Your Project",
+          "link": "https://wa.me/8801720498825",
+          "linkTarget": "new"
+        },
+        {
+          "title": "Deliver & Support",
+          "subtitle": "Keep the website reliable over time.",
+          "description": "After final verification, the website is delivered with recommendations for maintenance, updates, backups, and ongoing security.",
+          "icon": "fa-support",
+          "morePoints": [],
+          "linkText": "Discuss Your Project",
+          "link": "https://wa.me/8801720498825",
+          "linkTarget": "new"
+        }
+      ],
+      "eyebrow": "How I Work",
+      "ctaButtonLink": "https://wa.me/8801720498825",
+      "id": "wordpress-security-process",
+      "createdAt": "2026-07-27T06:54:28.361Z",
+      "updatedAt": "2026-07-27T09:18:14.651Z",
+      "ctaButtonTarget": "same",
+      "sectors": [
+        "wordpress"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "heading": "THE  [highlight]SKILLS [/highlight]  \nBEHIND MY WORK",
+      "description": "Built through 12+ years in digital design and multimedia—including 6+ years specializing in WordPress—my skills combine creative thinking, technical development, quality assurance, and modern automation to deliver polished and reliable digital experiences.",
+      "subtitle": "EXPERTISE",
+      "image": "/uploads/media/Interesting-about-Rashid.webp",
+      "imagePath": "/uploads/media/Interesting-about-Rashid.webp",
+      "overlayColor": "#000000",
+      "overlayOpacity": 55,
+      "id": "47a67c82-2970-4d50-9709-94adeeddab63",
+      "createdAt": "2026-07-28T05:51:00.066Z",
+      "updatedAt": "2026-07-28T05:51:00.066Z"
+    },
+    {
+      "heading": "[highlight]WordPress Expertise[/highlight]\nBuilt Around Security",
+      "description": "Security, development, custom plugins, and technical support—the skills behind secure and reliable WordPress solutions.",
+      "subtitle": "EXPERTISE",
+      "image": "/uploads/media/Interesting-about-Rashid.webp",
+      "imagePath": "/uploads/media/Interesting-about-Rashid.webp",
+      "overlayColor": "#000000",
+      "overlayOpacity": 55,
+      "id": "wordpress-security-skills",
+      "createdAt": "2026-07-28T05:51:00.066Z",
+      "updatedAt": "2026-07-28T05:51:00.066Z",
+      "sectors": [
+        "wordpress"
+      ]
+    }
+  ],
+  "skillgroups": [
+    {
+      "title": "WordPress Design & Development",
+      "description": "With 6+ years of WordPress experience, I design and develop responsive, visually polished, and reliable websites using leading page builders, WooCommerce, custom functionality, and performance-focused solutions.",
+      "display": "circle",
+      "order": 1,
+      "items": [
+        {
+          "name": "Elementor Pro",
+          "percent": 98
+        },
+        {
+          "name": "WPBakery",
+          "percent": 95
+        },
+        {
+          "name": "WordPress Customization",
+          "percent": 95
+        },
+        {
+          "name": "WooCommerce",
+          "percent": 93
+        },
+        {
+          "name": "ACF & Custom Post Types",
+          "percent": 90
+        },
+        {
+          "name": "Gutenberg / Block Editor",
+          "percent": 88
+        },
+        {
+          "name": "LMS & Membership Sites",
+          "percent": 88
+        },
+        {
+          "name": "Performance & Responsive QA",
+          "percent": 92
+        }
+      ],
+      "id": "03212389-c1dc-4198-a764-e57d4e996fe7",
+      "createdAt": "2026-07-28T07:19:45.494Z",
+      "updatedAt": "2026-07-28T07:20:19.146Z"
+    },
+    {
+      "title": "Video Editing & Motion Graphics",
+      "description": "I transform raw footage and creative ideas into polished visual stories through professional editing, motion graphics, animation, color correction, and sound—creating engaging content for brands, products, social media, and digital campaigns.",
+      "display": "bar",
+      "order": 3,
+      "items": [
+        {
+          "name": "Professional Video Editing",
+          "percent": 94
+        },
+        {
+          "name": "Adobe Premiere Pro",
+          "percent": 93
+        },
+        {
+          "name": "Motion Graphics",
+          "percent": 91
+        },
+        {
+          "name": "Adobe After Effects",
+          "percent": 90
+        },
+        {
+          "name": "Social Media & Promotional Videos",
+          "percent": 92
+        },
+        {
+          "name": "Color Correction & Grading",
+          "percent": 89
+        },
+        {
+          "name": "Audio Editing & Synchronization",
+          "percent": 82
+        },
+        {
+          "name": "Animated Typography & Logo Motion",
+          "percent": 90
+        }
+      ],
+      "id": "b1ad8db6-ec8c-4427-832f-cfdcbc741ca2",
+      "createdAt": "2026-07-28T07:29:13.189Z",
+      "updatedAt": "2026-08-03T11:24:43.508Z",
+      "sectors": []
+    },
+    {
+      "title": "Multimedia Design & Visual Communication",
+      "description": "With 12+ years of experience in multimedia and digital design, I create visually consistent brand identities, user-focused interfaces, social media content, and marketing materials that communicate ideas clearly and strengthen brand presence.",
+      "display": "circle",
+      "order": 4,
+      "items": [
+        {
+          "name": "Graphic Design",
+          "percent": 96
+        },
+        {
+          "name": "Adobe Photoshop",
+          "percent": 93
+        },
+        {
+          "name": "Brand Identity Design",
+          "percent": 94
+        },
+        {
+          "name": "Social Media Design",
+          "percent": 92
+        },
+        {
+          "name": "Adobe Illustrator",
+          "percent": 96
+        },
+        {
+          "name": "UI/UX & Web Design",
+          "percent": 93
+        },
+        {
+          "name": "Marketing & Print Design",
+          "percent": 90
+        },
+        {
+          "name": "Creative Direction",
+          "percent": 91
+        }
+      ],
+      "id": "c67f3a60-786a-4ec6-b344-cba685c4e272",
+      "createdAt": "2026-07-28T08:51:52.668Z",
+      "updatedAt": "2026-08-03T11:24:34.260Z",
+      "sectors": []
+    },
+    {
+      "title": "WordPress Plugin Development & Automation",
+      "description": "I develop and customize WordPress plugins to add tailored functionality, integrate third-party services, automate repetitive workflows, and solve specific business needs with reliable, maintainable solutions.",
+      "display": "bar",
+      "order": 2,
+      "items": [
+        {
+          "name": "Custom Plugin Development",
+          "percent": 90
+        },
+        {
+          "name": "WooCommerce Customization",
+          "percent": 92
+        },
+        {
+          "name": "API Integration",
+          "percent": 82
+        },
+        {
+          "name": "Workflow Automation",
+          "percent": 92
+        },
+        {
+          "name": "WordPress Hooks & Filters",
+          "percent": 90
+        },
+        {
+          "name": "PHP & MySQL",
+          "percent": 97
+        },
+        {
+          "name": "Plugin Debugging & Bug Fixing",
+          "percent": 92
+        },
+        {
+          "name": "AI-Powered Automation",
+          "percent": 82
+        }
+      ],
+      "id": "fb003498-26fa-49d0-94a8-8e2594a19cdf",
+      "createdAt": "2026-07-28T08:55:50.065Z",
+      "updatedAt": "2026-08-03T11:24:14.717Z",
+      "sectors": []
+    },
+    {
+      "id": "wordpress-security-group-0",
+      "title": "WordPress Security",
+      "description": "Practical protection, secure configuration, and risk reduction.",
+      "display": "list",
+      "order": 0,
+      "sectors": [
+        "wordpress"
+      ],
+      "items": [
+        {
+          "name": "WordPress Security Hardening"
+        },
+        {
+          "name": "Malware Investigation & Cleanup"
+        },
+        {
+          "name": "Vulnerability Assessment"
+        },
+        {
+          "name": "Content Security Policy (CSP)"
+        },
+        {
+          "name": "Security Headers"
+        },
+        {
+          "name": "Wordfence Configuration"
+        },
+        {
+          "name": "Login & Access Security"
+        },
+        {
+          "name": "File & Database Security"
+        },
+        {
+          "name": "Spam & Bot Protection"
+        },
+        {
+          "name": "Backup & Recovery"
+        }
+      ]
+    },
+    {
+      "id": "wordpress-security-group-1",
+      "title": "WordPress Development",
+      "description": "Responsive websites built around real business requirements.",
+      "display": "list",
+      "order": 1,
+      "sectors": [
+        "wordpress"
+      ],
+      "items": [
+        {
+          "name": "WordPress"
+        },
+        {
+          "name": "Elementor / Elementor Pro"
+        },
+        {
+          "name": "WooCommerce"
+        },
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "HTML5"
+        },
+        {
+          "name": "CSS3"
+        },
+        {
+          "name": "JavaScript / jQuery"
+        },
+        {
+          "name": "MySQL"
+        },
+        {
+          "name": "Responsive Development"
+        },
+        {
+          "name": "Website Migration"
+        }
+      ]
+    },
+    {
+      "id": "wordpress-security-group-2",
+      "title": "Plugin Development",
+      "description": "Purpose-built functionality and integrations for WordPress.",
+      "display": "list",
+      "order": 2,
+      "sectors": [
+        "wordpress"
+      ],
+      "items": [
+        {
+          "name": "Custom Plugin Development"
+        },
+        {
+          "name": "WordPress Hooks"
+        },
+        {
+          "name": "Actions & Filters"
+        },
+        {
+          "name": "Shortcodes"
+        },
+        {
+          "name": "Custom Post Types"
+        },
+        {
+          "name": "Custom Admin Features"
+        },
+        {
+          "name": "REST API Integration"
+        },
+        {
+          "name": "Third-Party API Integration"
+        },
+        {
+          "name": "Plugin Customization"
+        }
+      ]
+    },
+    {
+      "id": "wordpress-security-group-3",
+      "title": "Technical & Performance",
+      "description": "Stable infrastructure, fast pages, and ongoing support.",
+      "display": "list",
+      "order": 3,
+      "sectors": [
+        "wordpress"
+      ],
+      "items": [
+        {
+          "name": "Website Speed Optimization"
+        },
+        {
+          "name": "Caching"
+        },
+        {
+          "name": "Core Web Vitals"
+        },
+        {
+          "name": "Troubleshooting"
+        },
+        {
+          "name": "DNS / SSL"
+        },
+        {
+          "name": "Hosting Configuration"
+        },
+        {
+          "name": "Cloudflare"
+        },
+        {
+          "name": "Backup & Migration"
+        },
+        {
+          "name": "Technical Maintenance"
+        }
+      ]
+    }
+  ],
+  "featured": [
+    {
+      "heading": "My Featured Projects",
+      "description": "In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida.",
+      "buttonText": "My Portfolio",
+      "buttonLink": "/portfolio",
+      "id": "088d01d5-169d-4642-919a-b29164aaceda",
+      "createdAt": "2026-07-30T14:08:11.162Z",
+      "updatedAt": "2026-07-30T14:08:11.162Z"
+    },
+    {
+      "heading": "Selected WordPress Projects",
+      "description": "Explore my WordPress development work and custom solutions. Each project brings together practical functionality, responsive design, and dependable performance.",
+      "buttonText": "View My Work",
+      "buttonLink": "/wordpress/portfolio/",
+      "id": "wordpress-security-featured",
+      "createdAt": "2026-07-30T14:08:11.162Z",
+      "updatedAt": "2026-07-30T14:08:11.162Z",
+      "sectors": [
+        "wordpress"
+      ]
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Federico Puebla",
+      "role": "Happy Client",
+      "quote": "\"I cannot recommend Abdul highly enough for front-end development work. From our first interaction to project completion, he demonstrated exceptional technical prowess paired with outstanding professionalism.\nAbdul's expertise with JavaScript frameworks is truly impressive—he implemented complex interactive elements that brought our website to life while maintaining excellent performance. His code organization is meticulous, making future maintenance straightforward for our team.\nWhat distinguishes Abdul is his thoughtful approach to development. He anticipates potential issues before they arise and builds with scalability in mind. His deep understanding of cross-browser compatibility and responsive design principles ensured our application worked flawlessly for all users.\nAbdul's communication deserves special mention—he provided clear updates, responded promptly to queries, and explained technical concepts in accessible terms. He seamlessly adapted to our workflow and collaborated effectively with our design and back-end teams.\nIf you're fortunate enough to have the opportunity to work with Abdul, don't hesitate. His technical skills, reliability, and genuine commitment to delivering quality work make him an invaluable asset for any front-end development project.\"",
+      "sourceLabel": "Upwork",
+      "sourceLink": "https://www.upwork.com/freelancers/~01ceb5756abe039b7a",
+      "rating": 5,
+      "order": 1,
+      "avatar": "/uploads/media/Federico Puebla.webp",
+      "avatarPath": "/uploads/media/Federico Puebla.webp",
+      "id": "36642969-d0ed-484e-b03c-76c4e8d6e479",
+      "createdAt": "2026-07-29T09:42:48.423Z",
+      "updatedAt": "2026-07-29T13:45:51.180Z"
+    },
+    {
+      "name": "Katerina GIleva",
+      "role": "Happy Client",
+      "quote": "\"Abdul was very skilled, professional, dedicated and fast in fixing the irregularities on my website. He also gave me other suggestions for further improvement of it and made it look and work very professional, faster and improved the Page Layout, the user interface and make it modernized, enhanced the user experience, made it fully responsive for all devices, improved website speed and optimize, remote unwanted CSS code, removed multiple header complexity, installed plugins for smooth working, and much more. I truly recommend him as very reliable and trustworthy for fixing all issues you can ever encounter with your website. With Abdul you are in safe hands. He is truly talented and excellent in everything that he does. He really did a great job and I am very grateful for everything he did for improving and fixing my website. It was very pleasant working with him, as he understood all my concerns easily. I recommend him to everyone that wants to be on the safe side and feel secure that the work will be appropriately done as wished and expected.\"",
+      "sourceLabel": "Upwork",
+      "sourceLink": "https://www.upwork.com/freelancers/~01ceb5756abe039b7a",
+      "rating": 5,
+      "order": 0,
+      "avatar": "/uploads/media/Katerina GIleva.jpg",
+      "avatarPath": "/uploads/media/Katerina GIleva.jpg",
+      "id": "b8400fcc-1f1d-49ae-881f-bc448c36fac3",
+      "createdAt": "2026-07-29T09:49:19.057Z",
+      "updatedAt": "2026-07-29T13:47:29.715Z"
+    },
+    {
+      "name": "Yamin Haji",
+      "role": "Happy Client",
+      "quote": "\"Abdul did an outstanding job! The workflow was smooth, communication was clear, and the delivery was timely. Highly appreciate his professionalism and effort!\"",
+      "sourceLabel": "Upwork",
+      "sourceLink": "https://www.upwork.com/freelancers/~01ceb5756abe039b7a",
+      "rating": 5,
+      "order": 0,
+      "avatar": "/uploads/media/Yamin Haji (2).webp",
+      "avatarPath": "/uploads/media/Yamin Haji (2).webp",
+      "id": "5127c2b0-f063-449b-9290-e1c667d4f646",
+      "createdAt": "2026-07-29T09:55:08.731Z",
+      "updatedAt": "2026-07-29T13:46:00.261Z"
+    },
+    {
+      "name": "Sharon Wood",
+      "role": "Happy Client",
+      "quote": "\"Abdul was a pleasure to work with. He was immediately available when I needed him and was highly proficient in compiling my website and ensuring it was as professional as I needed it to be in my field of work. He also has skills in motion graphics and promotional videos that I am sure I will use in the future. All in all, I am very happy with his service, skills, and the outcome of his work.\"",
+      "sourceLabel": "Upwork",
+      "sourceLink": "https://www.upwork.com/freelancers/~01ceb5756abe039b7a",
+      "rating": 5,
+      "order": 0,
+      "avatar": "/uploads/media/Sharon Wood.webp",
+      "avatarPath": "/uploads/media/Sharon Wood.webp",
+      "id": "07080251-9e61-4dad-a2e7-dc2d5df42853",
+      "createdAt": "2026-07-29T09:57:10.736Z",
+      "updatedAt": "2026-07-29T13:45:42.186Z"
+    }
+  ],
+  "testimonialsettings": [
+    {
+      "eyebrow": "CLIENT FEEDBACK",
+      "heading": "WHAT CLIENTS SAY ABOUT WORKING WITH ME",
+      "description": "Explore genuine feedback from clients and professional connections on Upwork and LinkedIn, reflecting the quality, communication, reliability, and commitment I bring to every project.",
+      "id": "e11e61b1-bf1c-4d18-bff7-fcd375b2a4bb",
+      "createdAt": "2026-07-29T09:18:44.362Z",
+      "updatedAt": "2026-07-29T13:59:02.824Z"
+    }
+  ],
+  "clientlogos": [],
+  "cta": [
+    {
+      "heading": "Ready To order Your Project ?",
+      "buttonText": "Get In Touch",
+      "buttonLink": "contacts.html",
+      "buttonTarget": "same",
+      "id": "ef9d3b2b-60c8-45e9-9614-47762200889a",
+      "createdAt": "2026-07-29T14:10:51.521Z",
+      "updatedAt": "2026-07-29T14:10:51.521Z"
+    },
+    {
+      "heading": "Need Help With Your WordPress Website?",
+      "buttonText": "Discuss Your Project",
+      "buttonLink": "https://wa.me/8801720498825",
+      "buttonTarget": "new",
+      "id": "wordpress-security-cta",
+      "createdAt": "2026-07-29T14:10:51.521Z",
+      "updatedAt": "2026-07-29T14:10:51.521Z",
+      "description": "Whether your WordPress website needs security improvements, development, custom functionality, performance optimization, or technical support, let's discuss the right solution.",
+      "secondaryButtonText": "Request a Security Review",
+      "secondaryButtonLink": "https://wa.me/8801720498825?text=I%20would%20like%20a%20WordPress%20security%20review.",
+      "sectors": [
+        "wordpress"
+      ]
+    }
+  ],
+  "footer": [
+    {
+      "id": "site-footer-settings",
+      "siteName": "Rashidverse",
+      "aboutHeading": "About Me",
+      "aboutText": "I create thoughtful digital work across WordPress design, motion graphics, video editing, and multimedia design.",
+      "portfolioButtonText": "My Portfolio",
+      "portfolioButtonLink": "/portfolio/",
+      "portfolioButtonTarget": "same",
+      "contactHeading": "Subscribe / Contacts",
+      "contactText": "Want to work together or receive an update? Send me a message and I will get back to you.",
+      "subscribeEnabled": true,
+      "subscribePlaceholder": "Email address",
+      "subscribeButtonText": "Send",
+      "phone": "+880 1720 498825",
+      "email": "rashedverse@gmail.com",
+      "address": "Bangladesh",
+      "socials": [
+        {
+          "platform": "facebook",
+          "label": "Facebook",
+          "url": ""
+        },
+        {
+          "platform": "instagram",
+          "label": "Instagram",
+          "url": ""
+        },
+        {
+          "platform": "linkedin",
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/in/iamabdulrashid/"
+        },
+        {
+          "platform": "youtube",
+          "label": "YouTube",
+          "url": ""
+        }
+      ],
+      "copyright": "Rashidverse. All rights reserved.",
+      "order": 0,
+      "createdAt": "2026-08-03T03:13:25.357Z",
+      "updatedAt": "2026-08-03T03:13:25.357Z"
+    }
+  ],
+  "header": [
+    {
+      "siteName": "Rashidverse",
+      "logo": "",
+      "logoLink": "/",
+      "menuLabel": "Menu",
+      "id": "66cc9b98-6466-485e-a589-253a495857eb",
+      "createdAt": "2026-07-29T15:19:37.748Z",
+      "updatedAt": "2026-07-29T15:19:37.748Z"
+    }
+  ],
+  "sectorprofiles": [
+    {
+      "id": "wordpress",
+      "slug": "wordpress",
+      "label": "WordPress",
+      "name": "WordPress Portfolio",
+      "title": "WordPress Security Specialist & Developer",
+      "description": "Abdul Rashid is a WordPress Security Specialist, Designer, Developer, and Plugin Developer providing WordPress security, custom development, performance optimization, and technical solutions.",
+      "order": 0,
+      "createdAt": "2026-08-01T10:58:33.006Z",
+      "updatedAt": "2026-08-14T04:10:10.388Z",
+      "heroOverlay": {
+        "mode": "solid",
+        "color": "#000000",
+        "opacity": 0,
+        "startColor": "#000000",
+        "startOpacity": 80,
+        "endColor": "#000000",
+        "endOpacity": 0,
+        "direction": "left"
+      },
+      "heroTitle": "I Secure, Build & Extend WordPress.",
+      "heroDescription": "WordPress Security Specialist, Designer, Developer & Plugin Developer helping businesses build safer, faster, and more reliable websites.",
+      "heroLabel": "WORDPRESS SECURITY • DEVELOPMENT • PLUGINS",
+      "footerBio": "WordPress Security Specialist, Designer, Developer & Plugin Developer focused on secure, reliable, and high-performing WordPress solutions.",
+      "hideFacts": true,
+      "hideVideo": true,
+      "expertiseJourney": [
+        {
+          "title": "WordPress Security Specialist",
+          "category": "Present Focus",
+          "description": "Security, hardening and protection through vulnerability review, malware investigation, security headers, access protection, monitoring, and secure configuration."
+        },
+        {
+          "title": "WordPress Designer & Developer",
+          "category": "Core Expertise",
+          "description": "Building professional WordPress websites with Elementor, WooCommerce, custom development, responsive design, migration, and performance optimization."
+        },
+        {
+          "title": "WordPress Plugin Developer",
+          "category": "Advanced Development",
+          "description": "Developing custom functionality with PHP, WordPress hooks and filters, custom admin features, API integration, and existing plugin customization."
+        }
+      ],
+      "heroSlides": [
+        {
+          "title": "WordPress Security Expert",
+          "categoryOne": "WORDPRESS SECURITY",
+          "buttonText": "VIEW EXPERTISE",
+          "link": "/wordpress/portfolio/",
+          "profileLink": "#sec4",
+          "image": "/uploads/media/Security-Expert-v2.webp",
+          "imagePosition": "center center",
+          "variant": "security"
+        },
+        {
+          "title": "WordPress Designer & Developer",
+          "categoryOne": "WORDPRESS DESIGN & DEVELOPMENT",
+          "buttonText": "VIEW PROJECTS",
+          "link": "/wordpress/portfolio/",
+          "profileLink": "#sec5"
+        },
+        {
+          "title": "WordPress Plugin Developer",
+          "categoryOne": "PLUGIN DEVELOPMENT",
+          "buttonText": "VIEW PLUGINS",
+          "link": "/plugins/",
+          "profileLink": "/plugins/",
+          "image": "/rashidverse-site/images/plugin-developer.webp",
+          "imagePosition": "center center",
+          "variant": "plugin"
+        }
+      ]
+    },
+    {
+      "id": "motion",
+      "slug": "motion",
+      "label": "Motion & Video",
+      "name": "Motion Graphics & Video Editing",
+      "title": "Motion Graphics & Video Editor",
+      "description": "Selected motion graphics and video editing work.",
+      "order": 1,
+      "createdAt": "2026-08-01T10:58:33.006Z",
+      "updatedAt": "2026-08-01T10:58:33.006Z",
+      "heroOverlay": {
+        "mode": "solid",
+        "color": "#000000",
+        "opacity": 40,
+        "startColor": "#000000",
+        "startOpacity": 72,
+        "endColor": "#000000",
+        "endOpacity": 20,
+        "direction": "left"
+      }
+    },
+    {
+      "id": "multimedia",
+      "slug": "multimedia",
+      "label": "Multimedia",
+      "name": "Multimedia Design",
+      "title": "Multimedia Designer",
+      "description": "Selected multimedia design work.",
+      "order": 2,
+      "createdAt": "2026-08-01T10:58:33.006Z",
+      "updatedAt": "2026-08-01T10:58:33.006Z",
+      "heroOverlay": {
+        "mode": "solid",
+        "color": "#000000",
+        "opacity": 40,
+        "startColor": "#000000",
+        "startOpacity": 72,
+        "endColor": "#000000",
+        "endOpacity": 20,
+        "direction": "left"
+      }
+    }
+  ],
+  "globalsettings": [
+    {
+      "id": "global-profile-settings",
+      "fullName": "Abdul Rashid",
+      "designation": "WordPress Designer & Developer",
+      "email": "rashedverse@gmail.com",
+      "phone": "+880 1720 498825",
+      "whatsapp": "8801720498825",
+      "upwork": "https://www.upwork.com/freelancers/~01ceb5756abe039b7a",
+      "linkedin": "https://www.linkedin.com/in/iamabdulrashid/",
+      "github": "https://github.com/rashidverse",
+      "profileImage": "/rashidverse-site/images/contact-drawer-profile.png",
+      "footer": "Rashidverse. All rights reserved.",
+      "resumes": [
+        {
+          "profile": "wordpress",
+          "label": "WordPress Resume",
+          "url": "/rashidverse-site/Abdul_Rashid_WordPress.pdf",
+          "target": "new"
+        },
+        {
+          "profile": "motion",
+          "label": "Motion & Video Resume",
+          "url": "",
+          "target": "new"
+        },
+        {
+          "profile": "multimedia",
+          "label": "Multimedia Resume",
+          "url": "",
+          "target": "new"
+        }
+      ],
+      "order": 0,
+      "createdAt": "2026-08-02T09:20:53.988Z",
+      "updatedAt": "2026-08-03T05:48:02.448Z",
+      "socialLinks": [
+        {
+          "platform": "upwork",
+          "label": "Upwork Profile",
+          "url": "https://www.upwork.com/freelancers/~01ceb5756abe039b7a",
+          "visible": true,
+          "order": 0
+        },
+        {
+          "platform": "linkedin",
+          "label": "LinkedIn Profile",
+          "url": "https://www.linkedin.com/in/iamabdulrashid/",
+          "visible": true,
+          "order": 1
+        },
+        {
+          "platform": "github",
+          "label": "GitHub",
+          "url": "https://github.com/rashidverse",
+          "visible": true,
+          "order": 2
+        },
+        {
+          "platform": "behance",
+          "label": "Behance",
+          "url": "https://www.behance.net/arclub9909d3",
+          "visible": true,
+          "order": 3
+        }
+      ],
+      "sectors": []
+    }
+  ],
+  "repeaterhero": [
+    {
+      "id": "repeater-builder-hero",
+      "badgePrefix": "ACF & SCF Supported",
+      "badgeHighlight": "Repeater",
+      "badgeSuffix": "for Elementor",
+      "titlePrefix": "Build Dynamic Repeater",
+      "titleHighlight": "Layouts",
+      "titleSuffix": "in Elementor",
+      "description": "Visually build, style and manage ACF & SCF Repeater fields with real-time preview. No code, No restriction. Total design freedom.",
+      "primaryButtonText": "Get Repeater Builder",
+      "primaryButtonLink": "https://codeload.github.com/rashidverse/ACF-Repeater-Elementor-Widget/zip/refs/heads/master",
+      "primaryButtonTarget": "same",
+      "secondaryButtonText": "See How It Works",
+      "secondaryButtonLink": "#how",
+      "secondaryButtonTarget": "same",
+      "order": 0,
+      "createdAt": "2026-08-08T11:42:44.896Z",
+      "updatedAt": "2026-08-13T11:50:02.688Z"
+    }
+  ],
+  "customplugins": [
+    {
+      "id": "wordpress-custom-plugins-settings",
+      "kicker": "1 Click.",
+      "heading": "My WordPress Plugins & Extensions",
+      "description": "A curated collection of custom WordPress plugins, practical add-ons, and extensions I build to improve real project workflows.",
+      "order": 0,
+      "createdAt": "2026-08-10T00:00:00.000Z",
+      "updatedAt": "2026-08-10T00:00:00.000Z"
+    }
+  ],
+  "pluginitems": [
+    {
+      "id": "wordpress-plugin-card-01",
+      "title": "ACF & SCF Reapter",
+      "description": "Profile overview",
+      "link": "/repeater-plugins",
+      "target": "same",
+      "icon": "blocks",
+      "order": 0,
+      "sectors": [
+        "wordpress"
+      ],
+      "createdAt": "2026-08-10T00:00:00.000Z",
+      "updatedAt": "2026-08-13T11:47:12.750Z",
+      "customIcon": "",
+      "downloadFile": "",
+      "downloadUrl": ""
+    },
+    {
+      "id": "wordpress-plugin-card-02",
+      "title": "Elementor Automation",
+      "description": "Import custom Elementor automation JSON files, upload embedded image assets to the WordPress Media Library, replace asset placeholders, and create Elementor Library templates from one admin screen.",
+      "link": "https://github.com/rashidverse/Elementor-Automation-Importer.git",
+      "target": "new",
+      "icon": "puzzle",
+      "order": 1,
+      "sectors": [
+        "wordpress"
+      ],
+      "createdAt": "2026-08-10T00:00:00.000Z",
+      "updatedAt": "2026-08-15T08:07:29.133Z",
+      "customIcon": "",
+      "downloadFile": "",
+      "downloadUrl": ""
+    },
+    {
+      "id": "wordpress-plugin-card-03",
+      "title": "Woocommerce-product-archive-enhancer",
+      "description": "Design skills",
+      "link": "https://github.com/rashidverse/Woocommerce-product-archive-enhancer.git",
+      "target": "new",
+      "icon": "speed",
+      "order": 2,
+      "sectors": [
+        "wordpress"
+      ],
+      "createdAt": "2026-08-10T00:00:00.000Z",
+      "updatedAt": "2026-08-15T08:10:39.841Z",
+      "customIcon": "",
+      "downloadFile": "",
+      "downloadUrl": ""
+    },
+    {
+      "id": "wordpress-plugin-card-04",
+      "title": "04_Projects",
+      "description": "Featured work",
+      "link": "#sec5",
+      "target": "same",
+      "icon": "code",
+      "order": 3,
+      "sectors": [
+        "wordpress"
+      ],
+      "createdAt": "2026-08-10T00:00:00.000Z",
+      "updatedAt": "2026-08-10T00:00:00.000Z"
+    },
+    {
+      "id": "wordpress-plugin-card-05",
+      "title": "05_Portfolio",
+      "description": "All WordPress work",
+      "link": "/wordpress/portfolio/",
+      "target": "same",
+      "icon": "image",
+      "order": 4,
+      "sectors": [
+        "wordpress"
+      ],
+      "createdAt": "2026-08-10T00:00:00.000Z",
+      "updatedAt": "2026-08-10T00:00:00.000Z"
+    },
+    {
+      "id": "wordpress-plugin-card-06",
+      "title": "06_Resume",
+      "description": "Work experience",
+      "link": "#sec3",
+      "target": "same",
+      "icon": "form",
+      "order": 5,
+      "sectors": [
+        "wordpress"
+      ],
+      "createdAt": "2026-08-10T00:00:00.000Z",
+      "updatedAt": "2026-08-10T00:00:00.000Z"
+    },
+    {
+      "id": "wordpress-plugin-card-07",
+      "title": "07_Clients",
+      "description": "Client feedback",
+      "link": "#sec6",
+      "target": "same",
+      "icon": "database",
+      "order": 6,
+      "sectors": [
+        "wordpress"
+      ],
+      "createdAt": "2026-08-10T00:00:00.000Z",
+      "updatedAt": "2026-08-10T00:00:00.000Z"
+    },
+    {
+      "id": "wordpress-plugin-card-08",
+      "title": "08_Images",
+      "description": "Project gallery",
+      "link": "/wordpress/portfolio/",
+      "target": "same",
+      "icon": "image",
+      "order": 7,
+      "sectors": [
+        "wordpress"
+      ],
+      "createdAt": "2026-08-10T00:00:00.000Z",
+      "updatedAt": "2026-08-10T00:00:00.000Z"
+    },
+    {
+      "id": "wordpress-plugin-card-09",
+      "title": "09_Contact",
+      "description": "Start a conversation",
+      "link": "#sec6",
+      "target": "same",
+      "icon": "form",
+      "order": 8,
+      "sectors": [
+        "wordpress"
+      ],
+      "createdAt": "2026-08-10T00:00:00.000Z",
+      "updatedAt": "2026-08-10T00:00:00.000Z"
+    },
+    {
+      "id": "wordpress-plugin-card-10",
+      "title": "10_Connect",
+      "description": "Get in touch",
+      "link": "#sec6",
+      "target": "same",
+      "icon": "settings",
+      "order": 9,
+      "sectors": [
+        "wordpress"
+      ],
+      "createdAt": "2026-08-10T00:00:00.000Z",
+      "updatedAt": "2026-08-10T00:00:00.000Z"
+    }
+  ]
+}

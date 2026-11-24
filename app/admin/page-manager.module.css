@@ -1,0 +1,230 @@
+.panel {
+  position: relative;
+  align-self: start;
+  width: 250px;
+  min-width: 250px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #252425;
+  color: #e8e6e3;
+  box-shadow: 0 8px 24px rgba(20, 18, 19, .16);
+  transition: width .24s ease, min-width .24s ease;
+}
+
+.layoutOpen {
+  grid-template-columns: 250px minmax(0, 1fr);
+}
+
+.layoutCollapsed {
+  grid-template-columns: 54px minmax(0, 1fr);
+}
+
+.dock {
+  position: sticky;
+  top: 0;
+  align-self: stretch;
+  min-height: 100vh;
+  border-radius: 0;
+}
+
+.collapsed {
+  width: 54px;
+  min-width: 54px;
+}
+
+.collapseButton {
+  position: absolute;
+  top: 26px;
+  right: 0;
+  z-index: 5;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #6e6e6e;
+  box-shadow: 0 3px 10px #09130c29;
+}
+
+.collapseButton:hover {
+  background: transparent;
+  color: #6e6e6e;
+}
+
+.collapseButton :global(.admin-module__aXBbkG__sidebarToggleIcon) {
+  width: 19px;
+  height: 19px;
+}
+
+.panelContent {
+  padding: 34px 12px 22px;
+}
+
+.title {
+  margin: 0 12px 14px;
+  color: #a8a5a2;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.navigationItem,
+.visibilityItem,
+.profileItem {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 11px;
+  margin: 4px 0;
+  padding: 10px 12px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #d4d1cd;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.navigationItem svg,
+.visibilityItem svg,
+.profileItem svg {
+  flex: 0 0 auto;
+  color: #b5b1ae;
+  font-size: 15px;
+}
+
+.navigationItem:hover,
+.visibilityItem:hover,
+.profileItem:hover,
+.navigationItemActive,
+.profileItemActive {
+  background: #3a3839;
+  color: #fff;
+}
+
+.navigationItemActive,
+.profileItemActive {
+  box-shadow: inset 3px 0 #f5c518;
+}
+
+.navigationItemActive svg,
+.profileItemActive svg {
+  color: #f5c518;
+}
+
+.selectLabel {
+  display: grid;
+  gap: 7px;
+  margin: 18px 0 22px;
+  padding: 0 12px;
+  color: #a8a5a2;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.selectLabel select {
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid #555152;
+  border-radius: 6px;
+  background: #302f30;
+  padding: 10px;
+  color: #f0efed;
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.selectLabel select:focus {
+  border-color: #f5c518;
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(245, 197, 24, .13);
+}
+
+.profileGroup {
+  margin-top: 22px;
+}
+
+.profileToggle {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px 9px;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  color: #a8a5a2;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.profileToggle:hover {
+  color: #f2f0ed;
+}
+
+.profileToggle span {
+  min-width: 0;
+  flex: 1;
+}
+
+.profileToggle svg {
+  color: #9b9794;
+  font-size: 10px;
+}
+
+.profileItems {
+  display: grid;
+  gap: 0;
+}
+
+.profileItem {
+  font-size: 12px;
+}
+
+.visibilityItem {
+  margin-top: 22px;
+  border-top: 1px solid #454344;
+  border-radius: 0;
+  padding-top: 17px;
+}
+
+@media (max-width: 760px) {
+  .dock {
+    position: sticky;
+    z-index: 15;
+    min-height: 100vh;
+  }
+
+  .panel {
+    width: 224px;
+    min-width: 224px;
+  }
+
+  .collapsed {
+    width: 48px;
+    min-width: 48px;
+  }
+
+  .layoutOpen {
+    grid-template-columns: 224px minmax(0, 1fr);
+  }
+
+  .layoutCollapsed {
+    grid-template-columns: 48px minmax(0, 1fr);
+  }
+}

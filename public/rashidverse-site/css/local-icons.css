@@ -1,0 +1,76 @@
+/* Local Font Awesome Free files. The original template archive contained empty Pro font placeholders. */
+@font-face {
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url("../webfonts/fa-solid-900.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("../webfonts/fa-regular-400.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Font Awesome 5 Brands";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("../webfonts/fa-brands-400.woff2") format("woff2");
+}
+
+/* The template uses Pro's light (fal) names. Render matching free solid icons locally. */
+.fa,
+.fal,
+.fas {
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
+}
+
+.far {
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 400 !important;
+}
+
+.fab {
+    font-family: "Font Awesome 5 Brands" !important;
+    font-weight: 400 !important;
+}
+
+/* Upwork does not ship with the local Font Awesome build. */
+.rv-upwork-icon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+}
+
+/* This pseudo-icon was set to a Font Awesome Pro glyph in the original template. */
+.fs-carousel-link::after {
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
+    content: "\f30b" !important;
+}
+
+/* Process-step arrows used the unavailable Pro font in the original template. */
+.process-wrap li::after,
+.serv-wrap::after {
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
+    right: 0px !important;
+}
+
+/* Preserve the original image layout when a work-experience photo is linked. */
+.rv-experience-image-link {
+    display: block;
+}
+
+/* Keep the original resume layout intact; only the image itself moves. */
+.rv-experience-parallax-image {
+    will-change: transform;
+}

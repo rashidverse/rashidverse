@@ -1,0 +1,234 @@
+/* WordPress profile: continuous, data-driven portfolio ribbon. */
+.hero-wrap.rv-wordpress-ribbon-enabled {
+    background: #030627;
+}
+
+#dynamic-hero-carousel.rv-wordpress-hero-carousel,
+#dynamic-hero-carousel.rv-wordpress-hero-carousel .fs-carousel-item {
+    width: 100%;
+    height: 100%;
+}
+
+#dynamic-hero-carousel.rv-wordpress-hero-carousel .fs-carousel-item {
+    float: none;
+    margin: 0;
+    overflow: hidden;
+}
+
+#dynamic-hero-carousel.rv-wordpress-hero-carousel .fs-carousel-item::after {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    pointer-events: none;
+    content: "";
+    background: linear-gradient(-130deg, rgba(2, 5, 34, .86) 0%, rgba(2, 5, 34, .58) 43%, rgba(2, 5, 34, .27) 66%, rgba(2, 5, 34, .74) 100%);
+}
+
+#dynamic-hero-carousel.rv-wordpress-hero-carousel .fs-carousel-title {
+    top: 33%;
+    width: min(49%, 680px);
+    padding-left: clamp(42px, 7.2vw, 138px);
+    padding-right: 28px;
+}
+
+#dynamic-hero-carousel.rv-wordpress-hero-carousel .fs-carousel-title,
+#dynamic-hero-carousel.rv-wordpress-hero-carousel .carousle-item-number {
+    z-index: 8;
+}
+
+.rv-hero-portfolio-ribbon {
+    position: absolute;
+    top: 0;
+    right: clamp(24px, 4.2vw, 82px);
+    z-index: 20;
+    width: 300px;
+    height: calc(100% - 80px);
+    padding: 6px 16px;
+    overflow: hidden;
+    isolation: isolate;
+    pointer-events: auto;
+}
+
+.rv-hero-portfolio-ribbon::before,
+.rv-hero-portfolio-ribbon::after {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 3;
+    height: 110px;
+    pointer-events: none;
+    content: "";
+}
+
+.rv-hero-portfolio-ribbon::before {
+    top: 0;
+    background: linear-gradient(180deg, #030627 4%, rgba(3, 6, 39, 0));
+}
+
+.rv-hero-portfolio-ribbon::after {
+    bottom: 0;
+    background: linear-gradient(0deg, #030627 4%, rgba(3, 6, 39, 0));
+}
+
+.rv-ribbon-track {
+    display: flex;
+    flex-direction: column;
+    animation: rv-wordpress-portfolio-loop 14s linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translate3d(0, -88px, 0);
+}
+
+.rv-ribbon-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rv-ribbon-card {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 300px;
+    height: 180px;
+    flex: 0 0 180px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 24px;
+    background: #101733;
+    box-shadow: 0 20px 45px rgba(0, 0, 15, .38), 0 0 30px rgba(35, 115, 255, .1);
+    color: #fff;
+    text-decoration: none;
+    transform: rotate(7deg);
+    transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.rv-ribbon-card + .rv-ribbon-card {
+    margin-top: -38px;
+}
+
+.rv-ribbon-card:nth-child(5n + 2) { transform: rotate(-5deg); }
+.rv-ribbon-card:nth-child(5n + 3) { transform: rotate(3deg); }
+.rv-ribbon-card:nth-child(5n + 4) { transform: rotate(-4deg); }
+.rv-ribbon-card:nth-child(5n + 5) { transform: rotate(6deg); }
+
+.rv-ribbon-card:hover,
+.rv-ribbon-card:focus-visible {
+    z-index: 4;
+    color: #fff;
+    box-shadow: 0 28px 54px rgba(0, 0, 15, .55), 0 0 34px rgba(60, 133, 255, .28);
+    transform: scale(1.025) rotate(0deg);
+}
+
+.rv-ribbon-card:focus-visible { outline: 2px solid #f7c918; outline-offset: 4px; }
+
+.rv-ribbon-card img,
+.rv-ribbon-card-shade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.rv-ribbon-card img { object-fit: cover; object-position: center; }
+.rv-ribbon-card-shade { background: linear-gradient(180deg, rgba(2, 5, 25, 0) 25%, rgba(2, 5, 25, .9) 100%); }
+
+.rv-ribbon-card-copy {
+    position: absolute;
+    right: 18px;
+    bottom: 17px;
+    left: 18px;
+    z-index: 1;
+    display: none;
+    gap: 4px;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, .55);
+}
+
+.rv-ribbon-card-copy strong {
+    overflow: hidden;
+    font-size: clamp(12px, 1vw, 15px);
+    font-weight: 700;
+    letter-spacing: .03em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rv-ribbon-card-copy small {
+    color: #f7c918;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+@keyframes rv-wordpress-portfolio-loop {
+    from { transform: translate3d(0, -88px, 0); }
+    to { transform: translate3d(0, calc(-50% - 88px), 0); }
+}
+
+@media (max-width: 1024px) {
+    #dynamic-hero-carousel.rv-wordpress-hero-carousel .fs-carousel-title {
+        width: 56%;
+        padding-left: 72px;
+    }
+
+    .rv-hero-portfolio-ribbon {
+        right: 22px;
+        width: 300px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .rv-ribbon-card { border-radius: 19px; }
+    .rv-ribbon-card + .rv-ribbon-card { margin-top: -28px; }
+}
+
+@media (max-width: 767px) {
+    .hero-wrap.rv-wordpress-ribbon-enabled {
+        height: auto !important;
+        min-height: 0;
+        padding-bottom: 80px;
+        overflow: visible;
+    }
+
+    .hero-wrap.rv-wordpress-ribbon-enabled .hero-inner,
+    .hero-wrap.rv-wordpress-ribbon-enabled .fs-carousel-wrap,
+    #dynamic-hero-carousel.rv-wordpress-hero-carousel,
+    #dynamic-hero-carousel.rv-wordpress-hero-carousel .fs-carousel-item {
+        height: auto !important;
+    }
+
+    .hero-wrap.rv-wordpress-ribbon-enabled .fs-carousel-wrap { min-height: 490px; padding-left: 0; }
+    #dynamic-hero-carousel.rv-wordpress-hero-carousel .fs-carousel-item { min-height: 490px; }
+
+    #dynamic-hero-carousel.rv-wordpress-hero-carousel .fs-carousel-title {
+        top: 26%;
+        width: min(100%, 560px);
+        padding-right: 28px;
+        padding-left: 32px;
+    }
+
+    .rv-hero-portfolio-ribbon {
+        position: relative;
+        right: auto;
+        width: min(calc(100% - 32px), 500px);
+        height: 330px;
+        margin: -42px auto 84px;
+        padding-right: 13px;
+        padding-left: 13px;
+    }
+
+    .rv-hero-portfolio-ribbon::before,
+    .rv-hero-portfolio-ribbon::after { height: 76px; }
+
+    .rv-ribbon-card {
+        width: min(300px, 100%);
+        height: auto;
+        aspect-ratio: 5 / 3;
+        flex-basis: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rv-ribbon-track { animation: none; transform: translate3d(0, -88px, 0); }
+}

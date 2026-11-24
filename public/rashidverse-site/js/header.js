@@ -1,0 +1,4 @@
+(function ($) {
+  "use strict";
+  $(function () { $.getJSON("/api/content/header/").done(function (items) { var item = (items || [])[0]; if (!item) return; var logo = $(".logo-holder, .header-logo"); if (item.logo) logo.find("img").attr("src", item.logo).attr("alt", item.siteName || "Website logo"); if (item.logoLink) logo.attr("href", item.logoLink); $(".menu-button-text, .nav-title span").text(item.menuLabel || "Menu"); if (Array.isArray(item.menuItems) && item.menuItems.length) { $(".nav-inner-wrap #menu > ul").html(item.menuItems.slice().sort(function (a, b) { return Number(a.order || 0) - Number(b.order || 0); }).map(function (entry) { return '<li><a href="' + String(entry.link || "#").replace(/\"/g, "&quot;") + '"' + (entry.target === "new" ? ' target="_blank" rel="noopener noreferrer"' : "") + '>' + $("<div>").text(entry.label || "Menu item").html() + '</a></li>'; }).join("")); } }); });
+}(jQuery));

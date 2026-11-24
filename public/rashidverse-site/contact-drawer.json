@@ -1,0 +1,82 @@
+{
+  "name": "Abdul Rashid",
+  "role": "WordPress Designer & Developer",
+  "profileImage": "/rashidverse-site/images/contact-drawer-profile.png",
+  "footer": "Rashidverse. All rights reserved.",
+  "sections": [
+    {
+      "title": "Connect",
+      "items": [
+        {
+          "label": "Upwork Profile",
+          "url": "https://www.upwork.com/freelancers/~01ceb5756abe039b7a",
+          "icon": "upwork",
+          "tone": "upwork",
+          "external": true
+        },
+        {
+          "label": "LinkedIn Profile",
+          "url": "https://www.linkedin.com/in/iamabdulrashid/",
+          "icon": "linkedin",
+          "tone": "linkedin",
+          "external": true
+        }
+      ]
+    },
+    {
+      "title": "Download",
+      "layout": "inline",
+      "items": [
+        {
+          "label": "Resume with Photo",
+          "url": "/rashidverse-site/Abdul_Rashid_WordPress.pdf",
+          "icon": "photo",
+          "tone": "resume",
+          "external": true
+        },
+        {
+          "label": "Resume (ATS)",
+          "url": "/rashidverse-site/Abdul_Rashid_WordPress.pdf",
+          "icon": "document",
+          "tone": "resume",
+          "external": true
+        }
+      ]
+    },
+    {
+      "title": "Contact",
+      "items": [
+        {
+          "label": "rashedverse@gmail.com",
+          "url": "mailto:rashedverse@gmail.com",
+          "icon": "mail",
+          "tone": "email"
+        },
+        {
+          "label": "+880 1720 498825",
+          "url": "https://wa.me/8801720498825",
+          "icon": "chat",
+          "tone": "whatsapp",
+          "external": true
+        }
+      ]
+    },
+    {
+      "title": "More",
+      "layout": "inline",
+      "items": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/rashidverse",
+          "icon": "github",
+          "external": true
+        },
+        {
+          "label": "Contact me",
+          "url": "mailto:rashedverse@gmail.com",
+          "icon": "chat"
+        }
+      ]
+    }
+  ]
+}

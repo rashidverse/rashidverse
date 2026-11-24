@@ -1,6 +1,5 @@
 "use client";
 
-import { collection, onSnapshot } from "firebase/firestore";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   type CSSProperties,
@@ -12,7 +11,6 @@ import {
   useRef,
   useState,
 } from "react";
-import { db } from "@/lib/firebase";
 import styles from "./PortfolioGallery.module.css";
 
 type PortfolioProject = {
@@ -28,10 +26,27 @@ type PortfolioProject = {
   ratio: number;
 };
 
-type StoredProject = Omit<
-  PortfolioProject,
-  "columns" | "rows" | "ratio"
->;
+type StoredProject = Omit<PortfolioProject, "columns" | "rows" | "ratio">;
+
+type PortfolioGalleryProps = {
+  label?: string;
+  title?: string;
+  text?: string;
+};
+
+type PortfolioApiProject = {
+  id?: string;
+  title?: string;
+  category?: string;
+  mainCategory?: string;
+  subcategory?: string;
+  link?: string;
+  thumb?: string;
+  hoverImg?: string;
+  image?: string;
+  order?: number;
+  published?: boolean;
+};
 
 type PortfolioCardStyle = CSSProperties & {
   "--portfolio-col": number;
@@ -40,8 +55,6 @@ type PortfolioCardStyle = CSSProperties & {
 };
 
 type HoverDirection = "top" | "right" | "bottom" | "left";
-
-const COLLECTION_NAME = "portfolio";
 
 const layoutPattern = [
   { columns: 1, rows: 1, ratio: 460 / 305 },
@@ -90,7 +103,11 @@ function isTouchLayout() {
   return window.matchMedia("(hover: none)").matches;
 }
 
-export default function PortfolioGallery() {
+export default function PortfolioGallery({
+  label,
+  title,
+  text,
+}: PortfolioGalleryProps) {
   const [projects, setProjects] = useState<PortfolioProject[]>([]);
   const [activeFilter, setActiveFilter] = useState("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -103,25 +120,34 @@ export default function PortfolioGallery() {
   const touchStartX = useRef<number | null>(null);
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(
-      collection(db, COLLECTION_NAME),
-      (snapshot) => {
-        const storedProjects = snapshot.docs
-          .map((projectDocument): StoredProject | null => {
-            const data = projectDocument.data();
-            const title = String(data.title ?? "").trim();
-            const image = String(data.thumb ?? "").trim();
+    const controller = new AbortController();
 
-            if (!title || !image) return null;
+    async function loadProjects() {
+      try {
+        const response = await fetch("/api/content/portfolio", {
+          signal: controller.signal,
+        });
+        if (!response.ok) throw new Error(`Request failed (${response.status})`);
+
+        const items = (await response.json()) as PortfolioApiProject[];
+        const storedProjects = (Array.isArray(items) ? items : [])
+          .filter((item) => item.published !== false)
+          .map((item, index): StoredProject | null => {
+            const projectTitle = String(item.title ?? "").trim();
+            const image = String(item.thumb ?? item.image ?? item.hoverImg ?? "").trim();
+
+            if (!projectTitle || !image) return null;
 
             return {
-              id: projectDocument.id,
-              title,
-              category: String(data.category ?? "Uncategorized").trim(),
-              link: String(data.link ?? "").trim(),
+              id: String(item.id ?? `portfolio-${index}`),
+              title: projectTitle,
+              category:
+                String(item.subcategory ?? item.mainCategory ?? item.category ?? "Uncategorized").trim() ||
+                "Uncategorized",
+              link: String(item.link ?? "").trim(),
               image,
-              viewerImage: String(data.hoverImg ?? image).trim() || image,
-              order: Number(data.order) || 0,
+              viewerImage: String(item.hoverImg ?? image).trim() || image,
+              order: Number(item.order) || 0,
             };
           })
           .filter((project): project is StoredProject => project !== null)
@@ -134,15 +160,17 @@ export default function PortfolioGallery() {
           })),
         );
         setLoadError("");
-        setLoading(false);
-      },
-      (error) => {
-        setLoadError(`Projects could not be loaded: ${error.message}`);
-        setLoading(false);
-      },
-    );
+      } catch (error) {
+        if (controller.signal.aborted) return;
+        const message = error instanceof Error ? error.message : "Unknown error";
+        setLoadError(`Projects could not be loaded: ${message}`);
+      } finally {
+        if (!controller.signal.aborted) setLoading(false);
+      }
+    }
 
-    return unsubscribe;
+    void loadProjects();
+    return () => controller.abort();
   }, []);
 
   const filters = useMemo(() => {
@@ -308,6 +336,7 @@ export default function PortfolioGallery() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
+        {label ? <p className={styles.portfolioLabel}>{label}</p> : null}
         <motion.h2
           className={styles.portfolioHeading}
           initial={{ opacity: 0, y: 20 }}
@@ -315,7 +344,7 @@ export default function PortfolioGallery() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.55, delay: 0.1 }}
         >
-          Design. Develop. Deliver. WordPress Excellence.
+          {title || "WordPress Portfolio"}
         </motion.h2>
         <motion.p
           className={styles.portfolioIntro}
@@ -324,7 +353,7 @@ export default function PortfolioGallery() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.55, delay: 0.18 }}
         >
-          From idea to launch — I build clean, responsive, and powerful WordPress websites.
+          {text || "From idea to launch — I build clean, responsive, and powerful WordPress websites."}
         </motion.p>
         <motion.div
           className={styles.filterButtons}

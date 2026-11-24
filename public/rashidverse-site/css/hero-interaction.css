@@ -1,0 +1,40 @@
+/* Same expanding panel behaviour as rashidverse.me: hover selects a panel; JavaScript also rotates it automatically. */
+@media (min-width: 1025px) {
+    #dynamic-hero-carousel.hero-panel-carousel {
+        display: flex;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #dynamic-hero-carousel.hero-panel-carousel .fs-carousel-item {
+        float: none;
+        flex: 1 1 0;
+        width: auto !important;
+        height: 100% !important;
+        margin: 0 3px;
+        cursor: pointer;
+        transition: flex .6s cubic-bezier(.25, .46, .45, .94);
+    }
+
+    #dynamic-hero-carousel.hero-panel-carousel .fs-carousel-item.is-active {
+        flex: 1.65 1 0;
+    }
+
+    #dynamic-hero-carousel.hero-panel-carousel .fs-carousel-item .bg {
+        transition: transform .7s ease, filter .7s ease;
+    }
+
+    #dynamic-hero-carousel.hero-panel-carousel .fs-carousel-item.is-active .bg {
+        filter: brightness(.82);
+        transform: scale(1.04);
+    }
+}
+
+/* The Hero background is an independent profile link.  The text and CTA
+   have higher stacking levels, so they keep their own destinations. */
+.fs-carousel-item .fs-carousel-profile-link {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    display: block;
+}

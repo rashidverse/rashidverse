@@ -1,0 +1,155 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  overflow: hidden;
+  border: 1px solid #e0e4e1;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.card > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.2;
+  object-fit: cover;
+  background: #edf0ee;
+}
+.cardFile { display: grid; width: 100%; aspect-ratio: 1.2; place-items: center; background: linear-gradient(135deg, #edf4ff, #dceaff); color: #1964c7; font-size: 15px; font-weight: 800; letter-spacing: 1.3px; }
+
+.card > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+}
+
+.card span {
+  overflow: hidden;
+  flex: 1;
+  color: #5d675f;
+  font-size: 11px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 29px;
+  height: 29px;
+  cursor: pointer;
+  justify-content: center;
+  border: 1px solid #f1cdca;
+  border-radius: 5px;
+  background: #fff;
+  color: #b4453d;
+}
+
+.card button em { font-size: 10px; font-style: normal; font-weight: 700; }
+
+.mediaActions { display: flex; align-items: center; gap: 12px; }
+.mediaActions input { width: min(260px, 34vw); height: 45px; border: 1px solid #d8ded9; border-radius: 7px; background: #fff; padding: 0 13px; color: #344139; font: inherit; font-size: 13px; }
+.mediaActions input:focus { outline: 2px solid rgba(245, 197, 24, .45); border-color: #f5c518; }
+@media (max-width: 680px) { .mediaActions { width: 100%; flex-wrap: wrap; } .mediaActions input { flex: 1; min-width: 180px; } }
+
+.pickerTrigger {
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border: 1px dashed #cbd4ce;
+  border-radius: 7px;
+  background: #fff;
+}
+
+.pickerTrigger img {
+  width: 47px;
+  height: 47px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.pickerTrigger > span { flex: 1; color: #7b857e; font-size: 13px; }
+.pickerTrigger button, .uploadButton {
+  cursor: pointer;
+  border: 1px solid #d3dcd5;
+  border-radius: 5px;
+  background: #f4f7f4;
+  color: #304138;
+  padding: 9px 12px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+}
+.pickerTrigger .removeSelection { border-color: #f1cdca; color: #b4453d; }
+.iconPickerButton { width: 100%; cursor: pointer; border: 1px solid #d3dcd5; border-radius: 5px; background: #f4f7f4; color: #304138; padding: 8px; font: inherit; font-size: 11px; font-weight: 700; }
+.iconPickerButton + .iconPickerButton { margin-top: 7px; }
+.iconPreview { display: block; width: 32px; height: 32px; margin-top: 7px; object-fit: contain; }
+.buttonIconPreview { width: 16px; height: 16px; margin-right: 6px; vertical-align: middle; object-fit: contain; }
+.iconPickerButton i { margin-right: 6px; font-size: 15px; }
+
+.backdrop {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  overflow: auto;
+  place-items: center;
+  padding: 24px;
+  background: rgba(8, 15, 12, .68);
+}
+
+.modal {
+  width: min(1392px, 100%);
+  max-height: min(760px, 90vh);
+  overflow: auto;
+  padding: 24px;
+  border-radius: 11px;
+  background: #fff;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .28);
+}
+
+.iconLibraryModal { width: min(760px, 100%); max-height: min(700px, 90vh); overflow: auto; padding: 24px; border-radius: 11px; background: #fff; box-shadow: 0 30px 80px rgba(0, 0, 0, .28); }
+.iconLibraryGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); gap: 12px; }
+.iconLibraryGrid button { display: grid; min-height: 92px; cursor: pointer; place-items: center; gap: 7px; border: 1px solid #dbe2dc; border-radius: 8px; background: #f7f9f7; color: #29372f; padding: 12px 8px; font: inherit; }
+.iconLibraryGrid button:hover, .iconLibrarySelected { border-color: #f5c518 !important; background: #fff9dc !important; }
+.iconLibraryGrid i { color: #161b18; font-size: 28px; }
+.iconLibraryGrid img { width: 29px; height: 29px; object-fit: contain; }
+.iconLibraryGrid span { font-size: 11px; font-weight: 700; }
+.iconSearch { width: 100%; height: 44px; margin: 0 0 14px; border: 1px solid #d8ded9; border-radius: 7px; padding: 0 13px; color: #344139; font: inherit; }
+.iconSearch:focus { outline: 2px solid rgba(245, 197, 24, .45); border-color: #f5c518; }
+.libraryHint, .libraryError { margin: 0 0 14px; font-size: 13px; }
+.libraryHint { color: #6f7b73; }
+.libraryError { color: #b4453d; }
+
+.modalHead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.modalHead p { margin: 0 0 3px; color: #748078; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.modalHead h3 { margin: 0; font-size: 23px; }
+.modalHead > button { cursor: pointer; border: 0; background: none; color: #667169; font-size: 27px; }
+.uploadButton { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; background: #f5c518; border-color: #f5c518; color: #1c211d; }
+.pickerTools { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.pickerTools .uploadButton { margin-bottom: 0; }
+.pickerTools input { flex: 1; min-width: 0; height: 39px; border: 1px solid #d8ded9; border-radius: 6px; padding: 0 11px; color: #344139; font: inherit; font-size: 13px; }
+.pickerTools input:focus { outline: 2px solid rgba(245, 197, 24, .45); border-color: #f5c518; }
+.pickerGrid { columns: 170px 6; column-gap: 14px; }
+.pickWrap { position: relative; break-inside: avoid; margin: 0 0 14px; }
+.pickCard { display: block; width: 100%; overflow: hidden; cursor: pointer; border: 2px solid transparent; border-radius: 7px; background: #f4f6f4; padding: 0; text-align: left; }
+.pickCard:hover, .selected { border-color: #f5c518; }
+.pickCard img { display: block; width: 100%; max-height: 350px; height: auto; object-fit: contain; }
+.pickCard span { display: block; overflow: hidden; padding: 8px; color: #536058; font-size: 10px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.pickCard .filePreview { display: grid; min-height: 112px; place-items: center; overflow: visible; padding: 8px; background: linear-gradient(135deg, #edf4ff, #dceaff); color: #1964c7; font-size: 13px; font-weight: 800; letter-spacing: 1px; text-overflow: clip; white-space: normal; }
+.pickDelete { position: absolute; right: 6px; bottom: 32px; cursor: pointer; border: 0; border-radius: 4px; background: rgba(125, 38, 33, .92); color: #fff; padding: 5px 7px; font: inherit; font-size: 10px; font-weight: 700; opacity: 0; transition: opacity .18s ease; }
+.pickWrap:hover .pickDelete, .pickDelete:focus { opacity: 1; }
+.emptyState { grid-column: 1 / -1; color: #78827b; text-align: center; }
+
+@media (max-width: 560px) { .pickerTools { align-items: stretch; flex-direction: column; } .pickerTools input { flex: none; } .pickerGrid { columns: 130px 2; } .pickDelete { opacity: 1; } }
+
+/* The earlier two-choice layout field is kept for older entries; this is the full layout picker. */
+:global(label:has(select option[value="reverse"]):not(:has(option[value="image-right"]))) { display: none; }

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#030627"/><stop offset="1" stop-color="#172a45"/></linearGradient>
+    <linearGradient id="panel" x2="0" y2="1"><stop stop-color="#17283f"/><stop offset="1" stop-color="#0b142c"/></linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <g stroke="#8da9ca" stroke-opacity=".07"><path d="M0 180H1920M0 360H1920M0 540H1920M0 720H1920M0 900H1920M240 0V1080M480 0V1080M720 0V1080M960 0V1080M1200 0V1080M1440 0V1080M1680 0V1080"/></g>
+  <g transform="translate(770 160) rotate(-6 470 340)">
+    <rect width="960" height="690" rx="22" fill="url(#panel)" stroke="#354762" stroke-width="2"/>
+    <path d="M0 74H960M210 74V690" stroke="#354762"/>
+    <circle cx="36" cy="37" r="15" fill="none" stroke="#a4b5ca" stroke-width="2"/>
+    <text x="25" y="44" font-family="Georgia,serif" font-size="22" fill="#cfdaea">W</text>
+    <g font-family="Arial,sans-serif" fill="#a4b5ca" font-size="16">
+      <text x="65" y="44" letter-spacing="2">WORDPRESS / SECURITY</text>
+      <text x="30" y="128">Overview</text><text x="30" y="182">Access control</text><text x="30" y="236">Firewall</text><text x="30" y="290">Security headers</text><text x="30" y="344">File integrity</text><text x="30" y="398">Recovery</text>
+      <text x="260" y="135" fill="#e7edf7" font-size="26">Security &amp; Hardening</text>
+      <text x="260" y="169">A stronger foundation for WordPress.</text>
+    </g>
+    <g transform="translate(510 230)">
+      <path d="M100 0L190 36V107C190 184 100 233 100 233S10 184 10 107V36Z" fill="#f9c900" fill-opacity=".06" stroke="#f9c900" stroke-width="3"/>
+      <rect x="73" y="91" width="54" height="51" rx="7" fill="none" stroke="#f9c900" stroke-width="4"/>
+      <path d="M83 91V73a17 17 0 0 1 34 0v18" fill="none" stroke="#f9c900" stroke-width="4"/>
+      <circle cx="100" cy="114" r="4" fill="#f9c900"/><path d="M100 115v10" stroke="#f9c900" stroke-width="3"/>
+    </g>
+    <g fill="#101e34" stroke="#354762"><rect x="260" y="510" width="195" height="106" rx="8"/><rect x="475" y="510" width="195" height="106" rx="8"/><rect x="690" y="510" width="220" height="106" rx="8"/></g>
+    <g font-family="Arial,sans-serif" fill="#d7e0ed" font-size="17"><text x="280" y="548">Access protection</text><text x="495" y="548">Configuration</text><text x="710" y="548">Vulnerability review</text></g>
+    <g stroke="#f9c900" stroke-width="3"><path d="M280 582h52M495 582h52M710 582h52"/></g>
+  </g>
+</svg>

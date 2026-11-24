@@ -1,0 +1,386 @@
+/* WordPress hero: an eight-card discrete-push arc, visible only on the right. */
+
+
+.rv-wordpress-orbit-viewport {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* Do not stop above the bottom navigation: cards leave through the
+       bottom-right hero corner instead of being cut short. */
+    bottom: 0;
+    z-index: 20;
+    width: min(38vw, 580px);
+    overflow: hidden;
+    isolation: isolate;
+    pointer-events: auto;
+}
+
+.rv-wordpress-orbit-stage {
+    /* This virtual stage preserves the approved curve without rendering a
+       full 360-degree ring of cards. */
+    position: absolute;
+    /* Move the complete circle down so its visible arc enters from below. */
+    top: 52%;
+    left: 220px;
+    width: calc(100% / .45);
+    aspect-ratio: 1;
+    user-select: none;
+    transform: translateY(-50%);
+  
+ 
+
+  
+}
+
+
+.rv-wordpress-orbit {
+    position: absolute;
+    inset: 0;
+    overflow: visible;
+}
+
+.rv-orbit-card-link {
+    --rv-orbit-card-width: 240px;
+    --rv-orbit-card-height: calc(var(--rv-orbit-card-width) * .64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--rv-orbit-card-width);
+    height: var(--rv-orbit-card-height);
+    margin-top: calc(var(--rv-orbit-card-height) / -2);
+    margin-left: calc(var(--rv-orbit-card-width) / -2);
+    color: inherit;
+    outline: none;
+    text-decoration: none;
+    transform-origin: center center;
+    will-change: transform;
+}
+
+.rv-orbit-card {
+    --rv-orbit-local-scale: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 10px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, .50);
+    transform: scale(var(--rv-orbit-local-scale));
+    transition: transform .22s cubic-bezier(.2, .8, .2, 1), box-shadow .22s ease, filter .22s ease;
+}
+
+.rv-orbit-card-link:hover,
+.rv-orbit-card-link:focus-visible {
+    z-index: 99999 !important;
+}
+
+.rv-orbit-card-link:hover .rv-orbit-card,
+.rv-orbit-card-link:focus-visible .rv-orbit-card {
+    box-shadow: 0 24px 50px rgba(0, 0, 0, .65), 0 0 0 2px rgba(255, 255, 255, .66);
+    filter: brightness(1.07);
+    transform: scale(calc(var(--rv-orbit-local-scale) + .075));
+}
+
+.rv-orbit-card[data-theme="orange"] {
+    color: #fff;
+    background: linear-gradient(145deg, rgba(255, 255, 255, .12), transparent 36%), linear-gradient(130deg, #ff6039, #ff4b2b);
+}
+
+.rv-orbit-card[data-theme="black"] {
+    color: #f5f5f2;
+    background: radial-gradient(circle at 82% 14%, rgba(255, 75, 43, .15), transparent 28%), #111216;
+}
+
+.rv-orbit-card[data-theme="white"] {
+    color: #171717;
+    background: linear-gradient(145deg, #fff, #ecece8);
+}
+
+.rv-orbit-card-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 13px;
+}
+
+.rv-orbit-card-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: clamp(6px, .58vmin, 9px);
+    line-height: 1;
+    letter-spacing: .13em;
+    opacity: .8;
+    text-transform: uppercase;
+}
+
+.rv-orbit-lines {
+    display: grid;
+    gap: 4px;
+    margin-top: 9px;
+}
+
+.rv-orbit-lines i {
+    display: block;
+    height: 1px;
+    background: currentColor;
+    opacity: .22;
+}
+
+.rv-orbit-lines i:nth-child(2) { width: 74%; }
+.rv-orbit-lines i:nth-child(3) { width: 48%; }
+
+.rv-orbit-card-bottom {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.rv-orbit-mark {
+    font-size: clamp(34px, 3.25vmin, 58px);
+    font-weight: 800;
+    line-height: .8;
+    letter-spacing: -.08em;
+}
+
+.rv-orbit-card[data-theme="black"] .rv-orbit-mark { color: #ff4b2b; }
+
+.rv-orbit-meta {
+    max-width: 56%;
+    margin-left: auto;
+    text-align: right;
+}
+
+.rv-orbit-title {
+    font-size: clamp(8px, .83vmin, 12px);
+    font-weight: 700;
+    line-height: 1.03;
+    letter-spacing: -.03em;
+    text-transform: uppercase;
+}
+
+.rv-orbit-view {
+    margin-top: 6px;
+    font-size: clamp(6px, .55vmin, 9px);
+    opacity: .67;
+    text-transform: uppercase;
+}
+
+.rv-orbit-swatches {
+    display: flex;
+    justify-content: flex-end;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.rv-orbit-swatches span {
+    width: 9px;
+    height: 9px;
+    border: 1px solid currentColor;
+}
+
+.rv-orbit-swatches span:nth-child(1) { border-color: #ff4b2b; background: #ff4b2b; }
+.rv-orbit-swatches span:nth-child(2) { background: #fff; }
+.rv-orbit-swatches span:nth-child(3) { background: #111; }
+
+/* The source orbit's empty center remains visible inside the cropped arc. */
+.rv-orbit-center-mask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10000;
+    width: 47%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #030627;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+
+/* On /wordpress the original Hero slide arrows become vertical controls for
+   the portfolio-card arc. There is one Hero slide, so no slide counter is
+   needed here. */
+.rv-wordpress-orbit-enabled .fs-carousel-wrap > .rv-orbit-counter {
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    bottom: auto;
+    z-index: 40;
+    display: block;
+    margin: 0;
+    color: #ffc817;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    line-height: 1;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+.rv-wordpress-orbit-enabled .fs-carousel-wrap > .rv-orbit-control {
+    position: absolute;
+    right: 25px;
+    left: auto;
+    z-index: 40;
+    display: grid;
+    width: 30px;
+    height: 28px;
+    margin: 0;
+    place-items: center;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    color: #ffc817;
+    transform: none !important;
+    transition: color .2s ease, opacity .2s ease;
+}
+
+.rv-wordpress-orbit-enabled .fs-carousel-wrap > .rv-orbit-control:hover,
+.rv-wordpress-orbit-enabled .fs-carousel-wrap > .rv-orbit-control:focus-visible {
+    outline: none;
+    background: transparent;
+    color: #fff;
+}
+
+.rv-wordpress-orbit-enabled .fs-carousel-wrap > .rv-orbit-control-up {
+    top: calc(50% - 48px);
+    bottom: auto;
+}
+
+.rv-wordpress-orbit-enabled .fs-carousel-wrap > .rv-orbit-control-down {
+    top: calc(50% + 20px);
+    bottom: auto;
+}
+
+@media (max-width: 1100px) {
+    .rv-wordpress-orbit-viewport { width: min(42vw, 500px); }
+    .rv-orbit-card-link {
+        --rv-orbit-card-width: min(240px, 55vw);
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-wrap.rv-wordpress-orbit-enabled {
+        height: auto !important;
+        min-height: 0;
+        overflow: hidden;
+        padding-bottom: 80px;
+    }
+
+    .hero-wrap.rv-wordpress-orbit-enabled .hero-inner,
+    .hero-wrap.rv-wordpress-orbit-enabled .fs-carousel-wrap,
+    #dynamic-hero-carousel.rv-wordpress-hero-carousel,
+    #dynamic-hero-carousel.rv-wordpress-hero-carousel .fs-carousel-item {
+        height: auto !important;
+    }
+
+    .hero-wrap.rv-wordpress-orbit-enabled .fs-carousel-wrap,
+    #dynamic-hero-carousel.rv-wordpress-hero-carousel .fs-carousel-item { min-height: 500px; }
+
+    .rv-wordpress-orbit-viewport {
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        opacity: .82;
+    }
+
+    .rv-orbit-card-link { --rv-orbit-card-width: min(220px, 62vw); }
+    .rv-orbit-center-mask { width: 49%; }
+    .rv-wordpress-orbit-enabled .fs-carousel-wrap > .rv-orbit-control {
+        right: 12px;
+        width: 28px;
+        height: 25px;
+    }
+    .rv-wordpress-orbit-enabled .fs-carousel-wrap > .rv-orbit-counter { right: 12px; }
+    .rv-wordpress-orbit-enabled .fs-carousel-wrap > .rv-orbit-control-up { top: calc(50% - 43px); }
+    .rv-wordpress-orbit-enabled .fs-carousel-wrap > .rv-orbit-control-down { top: calc(50% + 18px); }
+}
+
+/* Real portfolio thumbnails keep the approved orbit card geometry intact. */
+.rv-orbit-card { background: #111216; }
+.rv-orbit-thumbnail { display: block; width: 100%; height: 100%; object-fit: cover; }
+.rv-orbit-thumbnail-shade { position: absolute; inset: 0; background: linear-gradient(145deg, rgba(3, 6, 39, .06), rgba(3, 6, 39, .38)); pointer-events: none; transition: background .22s ease; }
+.rv-orbit-thumbnail-number { position: absolute; right: 10px; bottom: 8px; color: rgba(255, 255, 255, .8); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-shadow: 0 1px 3px rgba(0, 0, 0, .65); }
+.rv-orbit-card .rv-orbit-card-inner { display: none; }
+.rv-orbit-card-link:hover .rv-orbit-thumbnail-shade, .rv-orbit-card-link:focus-visible .rv-orbit-thumbnail-shade { background: rgba(3, 6, 39, .04); }
+
+/* The bottom-navigation folder is a drawer, not a popup.  When it opens,
+   clear the WordPress Hero in three directions so the cards feel as though
+   they have pushed the hero content out of their path.  Removing the state
+   class reverses every transition. */
+.hero-wrap.rv-wordpress-orbit-enabled .rv-wordpress-hero-carousel .fs-carousel-title,
+.hero-wrap.rv-wordpress-orbit-enabled .rv-wordpress-hero-carousel .carousle-item-number {
+    will-change: opacity, transform;
+    transition: transform .82s cubic-bezier(.22, .9, .25, 1), opacity .66s ease;
+}
+
+.hero-wrap.rv-wordpress-orbit-enabled .rv-wordpress-hero-carousel .bg,
+.hero-wrap.rv-wordpress-orbit-enabled .rv-wordpress-hero-carousel .overlay {
+    will-change: opacity, transform;
+    transition: transform .88s cubic-bezier(.22, .9, .25, 1), opacity .7s ease;
+}
+
+.hero-wrap.rv-wordpress-orbit-enabled .rv-wordpress-orbit-viewport,
+.hero-wrap.rv-wordpress-orbit-enabled .fs-carousel-wrap > .rv-orbit-control,
+.hero-wrap.rv-wordpress-orbit-enabled .fs-carousel-wrap > .rv-orbit-counter {
+    will-change: opacity, transform;
+    transition: transform .84s cubic-bezier(.22, .9, .25, 1), opacity .66s ease;
+}
+
+.hero-wrap.rv-wordpress-orbit-enabled.rv-wordpress-folder-open .rv-wordpress-hero-carousel .fs-carousel-title {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(-125%, -5%, 0);
+}
+
+.hero-wrap.rv-wordpress-orbit-enabled.rv-wordpress-folder-open .rv-wordpress-hero-carousel .carousle-item-number {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(-95%, 135%, 0);
+}
+
+.hero-wrap.rv-wordpress-orbit-enabled.rv-wordpress-folder-open .rv-wordpress-hero-carousel .bg,
+.hero-wrap.rv-wordpress-orbit-enabled.rv-wordpress-folder-open .rv-wordpress-hero-carousel .overlay {
+    opacity: 0 !important;
+    pointer-events: none;
+    transform: translate3d(0, -110%, 0) !important;
+}
+
+.hero-wrap.rv-wordpress-orbit-enabled.rv-wordpress-folder-open .rv-wordpress-orbit-viewport {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(125%, 0, 0);
+}
+
+.hero-wrap.rv-wordpress-orbit-enabled.rv-wordpress-folder-open .fs-carousel-wrap > .rv-orbit-control,
+.hero-wrap.rv-wordpress-orbit-enabled.rv-wordpress-folder-open .fs-carousel-wrap > .rv-orbit-counter {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(140px, 0, 0) !important;
+}
+
+@media (max-width: 767px) {
+    .hero-wrap.rv-wordpress-orbit-enabled.rv-wordpress-folder-open .rv-wordpress-hero-carousel .fs-carousel-title,
+    .hero-wrap.rv-wordpress-orbit-enabled.rv-wordpress-folder-open .rv-wordpress-hero-carousel .carousle-item-number {
+        transform: translate3d(-115vw, 0, 0);
+    }
+
+    .hero-wrap.rv-wordpress-orbit-enabled.rv-wordpress-folder-open .rv-wordpress-orbit-viewport {
+        transform: translate3d(105vw, 0, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-wrap.rv-wordpress-orbit-enabled .rv-wordpress-hero-carousel .fs-carousel-title,
+    .hero-wrap.rv-wordpress-orbit-enabled .rv-wordpress-hero-carousel .carousle-item-number,
+    .hero-wrap.rv-wordpress-orbit-enabled .rv-wordpress-hero-carousel .bg,
+    .hero-wrap.rv-wordpress-orbit-enabled .rv-wordpress-hero-carousel .overlay,
+    .hero-wrap.rv-wordpress-orbit-enabled .rv-wordpress-orbit-viewport,
+    .hero-wrap.rv-wordpress-orbit-enabled .fs-carousel-wrap > .rv-orbit-control,
+    .hero-wrap.rv-wordpress-orbit-enabled .fs-carousel-wrap > .rv-orbit-counter {
+        transition-duration: 1ms;
+    }
+}

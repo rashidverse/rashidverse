@@ -1,14 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import {
   FaBehance,
+  FaBriefcase,
+  FaCode,
+  FaDribbble,
   FaFacebookF,
+  FaFilm,
+  FaGithub,
   FaInstagram,
+  FaLink,
   FaLinkedinIn,
+  FaPenNib,
+  FaTwitter,
+  FaWordpress,
   FaYoutube,
 } from "react-icons/fa";
+import { SiUpwork } from "react-icons/si";
 import PortfolioGallery from "./PortfolioGallery";
 
 const navItems = [
@@ -19,6 +29,21 @@ const navItems = [
   { label: "Projects", href: "#projects", id: "projects" },
   { label: "Clients", href: "#clients", id: "clients" },
 ];
+
+type SocialLink = { platform?: string; label?: string; url?: string; visible?: boolean; order?: number };
+
+const socialIconByPlatform = {
+  facebook: FaFacebookF,
+  instagram: FaInstagram,
+  linkedin: FaLinkedinIn,
+  youtube: FaYoutube,
+  twitter: FaTwitter,
+  github: FaGithub,
+  behance: FaBehance,
+  dribbble: FaDribbble,
+  upwork: SiUpwork,
+  custom: FaLink,
+} as const;
 
 const panels = [
   {
@@ -51,14 +76,8 @@ const sections = [
    {
     id: "projects",
     label: "My Work",
-    title: "Projects",
-    text: "A curated collection of websites, motion pieces, brand identities, and digital campaigns crafted with precision and creative intent.",
-  },
-  {
-    id: "resume",
-    label: "My Journey",
-    title: "Resume",
-    text: "Years of hands-on experience across design, development, and multimedia production, building brands and digital experiences that resonate.",
+    title: "WordPress Portfolio",
+    text: "From idea to launch — I build clean, responsive, and powerful WordPress websites.",
   },
   {
     id: "skills",
@@ -75,6 +94,266 @@ const sections = [
   },
 ];
 
+const aboutServices = [
+  {
+    title: "WordPress Design",
+    text: "Fast, polished websites built to turn visitors into clients.",
+    icon: FaWordpress,
+  },
+  {
+    title: "Web Development",
+    text: "Responsive, functional digital experiences made with care.",
+    icon: FaCode,
+  },
+  {
+    title: "Brand Identity",
+    text: "Distinct visual systems that make brands feel memorable.",
+    icon: FaPenNib,
+  },
+  {
+    title: "Motion & Video",
+    text: "Engaging edits and motion graphics with a clear story.",
+    icon: FaFilm,
+  },
+];
+
+const facts = [
+  { value: "145", label: "Finished Projects" },
+  { value: "357", label: "Happy Customers" },
+  { value: "825", label: "Working Hours" },
+  { value: "1124", label: "Coffee Cups" },
+];
+
+type WorkExperience = {
+  id: string;
+  company: string;
+  role: string;
+  period: string;
+  summary: string;
+  highlights: string[];
+  image: string;
+  order: number;
+  layout: "standard" | "reverse";
+};
+
+const fallbackExperience: WorkExperience[] = [{
+  id: "intro-experience",
+  company: "Independent Creative Professional",
+  role: "Building ideas into digital experiences",
+  period: "2019 — Present",
+  summary: "I work across WordPress development, visual identity, and motion design to help brands communicate with clarity and confidence. Each project balances strong aesthetics with practical results.",
+  highlights: ["WordPress websites & custom layouts", "Brand identity & visual design systems", "Video editing & motion graphics"],
+  image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1000&q=85",
+  order: 0,
+  layout: "standard",
+}];
+
+function AboutSection() {
+  return (
+    <section className="rv-about" id="about">
+      <span className="rv-about-slashes" aria-hidden="true">{"//"}</span>
+      <span className="rv-about-ghost" aria-hidden="true">ABOUT</span>
+      <div className="rv-about-inner rv-fade-up">
+        <div className="rv-about-portrait-wrap">
+          <div className="rv-about-yellow-block" aria-hidden="true" />
+          <div className="rv-about-name">RASHIDVERSE</div>
+          <div className="rv-about-portrait" role="img" aria-label="Creative professional working on a laptop" />
+        </div>
+
+        <div className="rv-about-content">
+          <p className="rv-about-kicker">CREATIVE PROFESSIONAL · BANGLADESH</p>
+          <h2>
+            Design that makes your <em>creative vision</em> feel real.
+          </h2>
+          <span className="rv-about-rule" aria-hidden="true" />
+          <p className="rv-about-intro">
+            I&apos;m Abdul Rashid — a designer and developer who blends strategy,
+            visual craft, and technology to create memorable digital experiences.
+          </p>
+
+          <div className="rv-about-services">
+            {aboutServices.map(({ title, text, icon: Icon }) => (
+              <article className="rv-about-service" key={title}>
+                <span className="rv-about-icon" aria-hidden="true"><Icon /></span>
+                <div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <a className="rv-about-cta" href="#projects">Explore My Portfolio</a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FactsSection() {
+  return (
+    <section className="rv-facts" aria-labelledby="facts-title">
+      <div className="rv-facts-backdrop" aria-hidden="true" />
+      <div className="rv-facts-shade" aria-hidden="true" />
+      <span className="rv-facts-vertical" aria-hidden="true">NUMBERS</span>
+      <div className="rv-facts-inner rv-fade-up">
+        <div className="rv-facts-intro">
+          <span className="rv-facts-mark" aria-hidden="true" />
+          <h2 id="facts-title">Some interesting <em>facts</em><br />about me</h2>
+          <span className="rv-facts-divider" aria-hidden="true" />
+          <p>
+            Every project is a new opportunity to solve a real problem with
+            thoughtful design, clear communication, and dependable delivery.
+          </p>
+        </div>
+        <div className="rv-facts-grid">
+          {facts.map((fact) => (
+            <article className="rv-fact" key={fact.label}>
+              <strong>{fact.value}</strong>
+              <span><i aria-hidden="true" />{fact.label}</span>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* Legacy single-entry layout retained as a design reference.
+function StaticResumeStorySection() {
+  return (
+    <section className="rv-resume-story" id="resume" aria-labelledby="resume-title">
+      <span className="rv-resume-ghost" aria-hidden="true">MY RESUME</span>
+      <span className="rv-resume-slashes" aria-hidden="true">{"//"}</span>
+      <div className="rv-resume-inner rv-fade-up">
+        <header className="rv-resume-heading">
+          <span className="rv-resume-line" aria-hidden="true" />
+          <p>Some Words About Me</p>
+          <h2 id="resume-title">My awesome <em>story</em></h2>
+          <p className="rv-resume-summary">
+            A creative journey shaped by curiosity, practical problem-solving,
+            and a love for making every detail count.
+          </p>
+        </header>
+
+        <div className="rv-resume-layout">
+          <article className="rv-resume-job">
+            <span className="rv-resume-job-dot" aria-hidden="true" />
+            <div className="rv-resume-job-card">
+              <span className="rv-resume-job-icon" aria-hidden="true"><FaBriefcase /></span>
+              <div>
+                <h3>Independent Creative Professional</h3>
+                <p>2019 — Present</p>
+              </div>
+            </div>
+            <span className="rv-resume-count" aria-hidden="true">01.</span>
+          </article>
+
+          <div className="rv-resume-image" role="img" aria-label="Creative team collaborating around a desk" />
+
+          <article className="rv-resume-detail">
+            <h3>Building ideas into digital experiences</h3>
+            <p>
+              I work across WordPress development, visual identity, and motion
+              design to help brands communicate with clarity and confidence.
+              Each project balances strong aesthetics with practical results.
+            </p>
+            <ol>
+              <li>WordPress websites &amp; custom layouts</li>
+              <li>Brand identity &amp; visual design systems</li>
+              <li>Video editing &amp; motion graphics</li>
+            </ol>
+            <a href="#projects">View selected work <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+}
+*/
+
+function ResumeStorySection() {
+  const [experiences, setExperiences] = useState<WorkExperience[]>(fallbackExperience);
+
+  useEffect(() => {
+    const loadExperiences = async () => {
+      try {
+        const response = await fetch("/api/content/experience/");
+        if (!response.ok) throw new Error("Could not load experience");
+        const snapshot: Array<Record<string, unknown>> = await response.json();
+        const savedExperiences = snapshot
+        .map((data: Record<string, unknown>): WorkExperience | null => {
+          const company = String(data.company ?? "").trim();
+          const role = String(data.role ?? "").trim();
+          if (!company || !role) return null;
+
+          const highlights = Array.isArray(data.highlights)
+            ? data.highlights.map((item) => String(item).trim()).filter(Boolean)
+            : String(data.highlights ?? "").split("\n").map((item) => item.trim()).filter(Boolean);
+
+          return {
+            id: String(data.id ?? ""),
+            company,
+            role,
+            period: String(data.period ?? "").trim(),
+            summary: String(data.summary ?? "").trim(),
+            highlights,
+            image: String(data.image ?? "").trim(),
+            order: Number(data.order) || 0,
+            layout: data.layout === "reverse" ? "reverse" : "standard",
+          };
+        })
+        .filter((experience): experience is WorkExperience => experience !== null)
+        .sort((first, second) => first.order - second.order);
+
+        if (savedExperiences.length) setExperiences(savedExperiences);
+      } catch {
+        // Keep the introductory experience visible if local data has not been created yet.
+      }
+    };
+    loadExperiences();
+  }, []);
+
+  return (
+    <section className="rv-resume-story" id="resume" aria-labelledby="resume-title">
+      <span className="rv-resume-ghost" aria-hidden="true">MY RESUME</span>
+      <span className="rv-resume-slashes" aria-hidden="true">{"//"}</span>
+      <div className="rv-resume-inner rv-fade-up">
+        <header className="rv-resume-heading">
+          <span className="rv-resume-line" aria-hidden="true" />
+          <p>Some Words About Me</p>
+          <h2 id="resume-title">My awesome <em>story</em></h2>
+          <p className="rv-resume-summary">A creative journey shaped by curiosity, practical problem-solving, and a love for making every detail count.</p>
+        </header>
+
+        <div className="rv-resume-list">
+          {experiences.map((experience, index) => (
+            <div className={`rv-resume-layout${experience.layout === "reverse" ? " is-reverse" : ""}`} key={experience.id}>
+              <article className="rv-resume-job">
+                <span className="rv-resume-job-dot" aria-hidden="true" />
+                <div className="rv-resume-job-card">
+                  <span className="rv-resume-job-icon" aria-hidden="true"><FaBriefcase /></span>
+                  <div><h3>{experience.company}</h3><p>{experience.period}</p></div>
+                </div>
+                <span className="rv-resume-count" aria-hidden="true">{String(index + 1).padStart(2, "0")}.</span>
+              </article>
+              <div className="rv-resume-image" role="img" aria-label={`${experience.company} workplace`} style={experience.image ? { backgroundImage: `url("${experience.image}")` } : undefined} />
+              <article className="rv-resume-detail">
+                <h3>{experience.role}</h3>
+                <p>{experience.summary}</p>
+                {experience.highlights.length > 0 && <ol>{experience.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ol>}
+                <a href="#projects">View selected work <span aria-hidden="true">→</span></a>
+              </article>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function scrollToAbout() {
   document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
 }
@@ -84,6 +363,18 @@ export default function PortfolioPage() {
   const [activePanel, setActivePanel] = useState(0);
   const [activeSection, setActiveSection] = useState("hero");
   const [barScrolled, setBarScrolled] = useState(false);
+  const [socialLinks, setSocialLinks] = useState<SocialLink[]>([]);
+
+  useEffect(() => {
+    fetch("/api/content/globalsettings/")
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error("Could not load social links")))
+      .then((items) => {
+        const settings = Array.isArray(items) ? items[0] : items;
+        const links = Array.isArray(settings?.socialLinks) ? settings.socialLinks : [];
+        setSocialLinks(links.filter((link: SocialLink) => link?.visible !== false && link?.url).sort((first: SocialLink, second: SocialLink) => Number(first.order || 0) - Number(second.order || 0)));
+      })
+      .catch(() => setSocialLinks([]));
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -178,37 +469,12 @@ export default function PortfolioPage() {
           </button>
         </div>
 
-        <div className="rv-social-icons">
-          <a
-            href="https://www.facebook.com/abdul.rashed99"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-          >
-            <FaFacebookF />
-          </a>
-          <a href="#" aria-label="Instagram">
-            <FaInstagram />
-          </a>
-          <a href="#" aria-label="YouTube">
-            <FaYoutube />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/iamabdulrashid/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedinIn />
-          </a>
-          <a
-            href="https://www.behance.net/arclub9909d3"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Behance"
-          >
-            <FaBehance />
-          </a>
+        <div className="rv-social-icons" aria-label="Social media links">
+          {socialLinks.map((social, index) => {
+            const platform = String(social.platform || "custom").toLowerCase() as keyof typeof socialIconByPlatform;
+            const Icon = socialIconByPlatform[platform] || FaLink;
+            return <a key={`${platform}-${index}`} href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.label || platform}><Icon /></a>;
+          })}
         </div>
 
         <button
@@ -355,7 +621,17 @@ export default function PortfolioPage() {
 
         {sections.map((section) =>
           section.id === "projects" ? (
-            <PortfolioGallery key={section.id} />
+            <Fragment key={section.id}>
+              <FactsSection />
+              <ResumeStorySection />
+              <PortfolioGallery
+                label={section.label}
+                title={section.title}
+                text={section.text}
+              />
+            </Fragment>
+          ) : section.id === "about" ? (
+            <AboutSection key={section.id} />
           ) : (
             <section className="rv-section" id={section.id} key={section.id}>
               <div className="rv-section-inner rv-fade-up">

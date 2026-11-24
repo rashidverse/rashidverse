@@ -4,8 +4,25 @@ import type { MouseEvent } from 'react';
 import { useEffect, useState } from 'react';
 import './repeater-plugins.css';
 
+const defaultHeroContent = {
+  badgePrefix: 'ACF & SCF Supported',
+  badgeHighlight: 'Repeater',
+  badgeSuffix: 'for Elementor',
+  titlePrefix: 'Build Dynamic Repeater',
+  titleHighlight: 'Layouts',
+  titleSuffix: 'in Elementor',
+  description: 'Visually build, style and manage ACF & SCF Repeater fields with real-time preview. No code, No restriction. Total design freedom.',
+  primaryButtonText: 'Get Repeater Builder',
+  primaryButtonLink: '#pricing',
+  primaryButtonTarget: 'same',
+  secondaryButtonText: 'See How It Works',
+  secondaryButtonLink: '#how',
+  secondaryButtonTarget: 'same',
+};
+
 export default function RepeaterPluginsPage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [heroContent, setHeroContent] = useState(defaultHeroContent);
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -27,6 +44,55 @@ export default function RepeaterPluginsPage() {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [menuOpen]);
+
+  useEffect(() => {
+    fetch('/api/content/repeaterhero/')
+      .then((response) => response.ok ? response.json() : [])
+      .then((items) => {
+        if (Array.isArray(items) && items[0]) setHeroContent({ ...defaultHeroContent, ...items[0] });
+      })
+      .catch(() => { /* The readable default Hero remains available if the API is offline. */ });
+  }, []);
+
+  useEffect(() => {
+    const revealItems = Array.from(document.querySelectorAll<HTMLElement>('[data-rp-reveal]'));
+    if (!revealItems.length) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      revealItems.forEach((item) => item.classList.add('is-revealed'));
+      return;
+    }
+
+    document.querySelectorAll<HTMLElement>('[data-rp-reveal-group]').forEach((group) => {
+      Array.from(group.children).forEach((child, index) => {
+        if (!(child instanceof HTMLElement) || !child.hasAttribute('data-rp-reveal')) return;
+        if (!child.dataset.rpRevealDelay) {
+          child.style.setProperty('--rp-reveal-delay', `${Math.min(index * 140, 560)}ms`);
+        }
+      });
+    });
+
+    revealItems.forEach((item) => {
+      if (item.dataset.rpRevealDelay) {
+        item.style.setProperty('--rp-reveal-delay', `${item.dataset.rpRevealDelay}ms`);
+      }
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          (entry.target as HTMLElement).classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.15 },
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
 
   const handleVisualMove = (event: MouseEvent<HTMLDivElement>) => {
     if (window.innerWidth < 980) return;
@@ -93,33 +159,34 @@ export default function RepeaterPluginsPage() {
       <main className="rp-page-main">
         <div className="rp-page-shell">
         <section className="rp-hero" id="start">
-          <div className="rp-hero-badge">
+          <div className="rp-hero-badge" data-rp-reveal data-rp-reveal-delay="0">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M13 2 5 13h6l-1 9 9-13h-6l1-7Z" fill="currentColor" />
             </svg>
-            ACF & SCF Supported<span className="rp-accent">Repeater</span> for Elementor
+            {heroContent.badgePrefix} <span className="rp-accent">{heroContent.badgeHighlight}</span> {heroContent.badgeSuffix}
           </div>
 
-          <h1 className="rp-hero-title">
-            Build Dynamic Repeater <span className="rp-accent">Layouts</span> in Elementor
+          <h1 className="rp-hero-title" data-rp-reveal data-rp-reveal-delay="150">
+            {heroContent.titlePrefix} <span className="rp-accent">{heroContent.titleHighlight}</span> {heroContent.titleSuffix}
           </h1>
 
-          <p className="rp-hero-copy">
-            Visually build, style and manage ACF & SCF Repeater fields with real-time preview. No code, No restriction.
-            Total design freedom.
+          <p className="rp-hero-copy" data-rp-reveal data-rp-reveal-delay="300">
+            {heroContent.description}
           </p>
 
-          <div className="rp-hero-actions">
-            <a href="#pricing" className="rp-pill-button primary">
-              Get Repeater Builder
+          <div className="rp-hero-actions" data-rp-reveal data-rp-reveal-delay="450">
+            <a href={heroContent.primaryButtonLink || '#'} className="rp-pill-button primary" target={heroContent.primaryButtonTarget === 'new' ? '_blank' : undefined} rel={heroContent.primaryButtonTarget === 'new' ? 'noreferrer' : undefined}>
+              {heroContent.primaryButtonText}
             </a>
-            <a href="#how" className="rp-pill-button secondary">
-              See How It Works
+            <a href={heroContent.secondaryButtonLink || '#'} className="rp-pill-button secondary" target={heroContent.secondaryButtonTarget === 'new' ? '_blank' : undefined} rel={heroContent.secondaryButtonTarget === 'new' ? 'noreferrer' : undefined}>
+              {heroContent.secondaryButtonText}
             </a>
           </div>
 
           <div
             className="rp-builder-visual"
+            data-rp-reveal
+            data-rp-reveal-delay="240"
             aria-label="Repeater builder interface preview"
             onMouseMove={handleVisualMove}
             onMouseLeave={handleVisualLeave}
@@ -365,12 +432,12 @@ export default function RepeaterPluginsPage() {
           </div>
         </section>
 
-        <section className="rp-trusted-bar" aria-label="Trusted by logos">
+        <section className="rp-trusted-bar" aria-label="Trusted by logos" data-rp-reveal>
           <h3 className="rp-trusted-title">
             Trusted by 10,000+ Web Creators
           </h3>
-          <div className="rp-logo-row">
-            <div className="rp-partner-logo rp-elementor">
+          <div className="rp-logo-row" data-rp-reveal-group>
+            <div className="rp-partner-logo rp-elementor" data-rp-reveal>
               <svg viewBox="0 0 40 40" fill="currentColor" aria-hidden="true">
                 <circle cx="20" cy="20" r="18" />
                 <rect x="12" y="11" width="4" height="18" fill="#fff" />
@@ -380,8 +447,8 @@ export default function RepeaterPluginsPage() {
               </svg>
               elementor
             </div>
-            <div className="rp-partner-logo rp-acf">ACF</div>
-            <div className="rp-partner-logo rp-wp">
+            <div className="rp-partner-logo rp-acf" data-rp-reveal>ACF</div>
+            <div className="rp-partner-logo rp-wp" data-rp-reveal>
               <svg viewBox="0 0 40 40" aria-hidden="true">
                 <circle
                   cx="20"
@@ -405,7 +472,7 @@ export default function RepeaterPluginsPage() {
               </svg>
               WordPress
             </div>
-            <div className="rp-partner-logo">
+            <div className="rp-partner-logo" data-rp-reveal>
               <span className="rp-code-mark">{'{}'}</span>
               <span className="rp-dynamic">
                 DYNAMIC
@@ -413,7 +480,7 @@ export default function RepeaterPluginsPage() {
                 CONTENT
               </span>
             </div>
-            <div className="rp-partner-logo rp-pro">
+            <div className="rp-partner-logo rp-pro" data-rp-reveal>
               <span>
                 Works with
                 <br />
@@ -427,19 +494,19 @@ export default function RepeaterPluginsPage() {
       <div className="rp-feature-process-section-container">
         <section className="rp-feature-process-section" id="features" aria-labelledby="rp-feature-process-title">
             <div className="rp-feature-process-container">
-              <div className="rp-section-mini-badge">
+              <div className="rp-section-mini-badge" data-rp-reveal>
                 <span aria-hidden="true">✦</span>
                 Powerful Features
               </div>
 
-              <h2 className="rp-feature-process-title" id="rp-feature-process-title">
+              <h2 className="rp-feature-process-title" id="rp-feature-process-title" data-rp-reveal>
                 Everything you need to build
                 <br />
                 dynamic content
               </h2>
 
-              <div className="rp-feature-card-grid">
-                <article className="rp-feature-info-card">
+              <div className="rp-feature-card-grid" data-rp-reveal-group>
+                <article className="rp-feature-info-card" data-rp-reveal>
                   <div className="rp-feature-icon-box">
                     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                       <path
@@ -461,7 +528,7 @@ export default function RepeaterPluginsPage() {
                   <p>Connect any ACF Repeater field and loop through rows with powerful query controls.</p>
                 </article>
 
-                <article className="rp-feature-info-card">
+                <article className="rp-feature-info-card" data-rp-reveal>
                   <div className="rp-feature-icon-box">
                     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                       <rect
@@ -486,7 +553,7 @@ export default function RepeaterPluginsPage() {
                   <p>Design each repeater item visually in Elementor. Reorder, duplicate and style with ease.</p>
                 </article>
 
-                <article className="rp-feature-info-card">
+                <article className="rp-feature-info-card" data-rp-reveal>
                   <div className="rp-feature-icon-box">
                     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                       <ellipse cx="12" cy="6" rx="6" ry="3" stroke="currentColor" strokeWidth="2" />
@@ -501,7 +568,7 @@ export default function RepeaterPluginsPage() {
                   <p>Map any ACF sub field to Elementor widgets. Supports text, image, link, icon, and more.</p>
                 </article>
 
-                <article className="rp-feature-info-card">
+                <article className="rp-feature-info-card" data-rp-reveal>
                   <div className="rp-feature-icon-box">
                     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                       <rect x="4" y="5" width="16" height="14" rx="2" stroke="currentColor" strokeWidth="2" />
@@ -514,15 +581,15 @@ export default function RepeaterPluginsPage() {
               </div>
 
               <div className="rp-process-area" id="how">
-                <div className="rp-section-mini-badge">
+                <div className="rp-section-mini-badge" data-rp-reveal>
                   <span aria-hidden="true">✦</span>
                   Simple 3-Step Process
                 </div>
 
-                <h2 className="rp-process-title">Build in minutes, not hours</h2>
+                <h2 className="rp-process-title" data-rp-reveal>Build in minutes, not hours</h2>
 
-                <div className="rp-process-card-grid">
-                  <article className="rp-process-card">
+                <div className="rp-process-card-grid" data-rp-reveal-group>
+                  <article className="rp-process-card" data-rp-reveal>
                     <div className="rp-process-card-head">
                       <span className="rp-process-number">1</span>
                       <h3>Select Repeater Field</h3>
@@ -540,7 +607,7 @@ export default function RepeaterPluginsPage() {
                     </div>
                   </article>
 
-                  <article className="rp-process-card">
+                  <article className="rp-process-card" data-rp-reveal>
                     <div className="rp-process-card-head">
                       <span className="rp-process-number">2</span>
                       <h3>Design Item Template</h3>
@@ -567,7 +634,7 @@ export default function RepeaterPluginsPage() {
                     </div>
                   </article>
 
-                  <article className="rp-process-card">
+                  <article className="rp-process-card" data-rp-reveal>
                     <div className="rp-process-card-head">
                       <span className="rp-process-number">3</span>
                       <h3>Publish &amp; Display</h3>
@@ -603,20 +670,20 @@ export default function RepeaterPluginsPage() {
           <section className="rp-usecase-section" id="templates" aria-labelledby="rp-usecase-title">
             <div className="rp-usecase-container">
               {/* Section Badge */}
-              <div className="rp-usecase-mini-badge">
+              <div className="rp-usecase-mini-badge" data-rp-reveal>
                 <span aria-hidden="true">✦</span>
                 Endless Possibilities
               </div>
 
               {/* Section Heading */}
-              <h2 className="rp-usecase-title" id="rp-usecase-title">
+              <h2 className="rp-usecase-title" id="rp-usecase-title" data-rp-reveal>
                 Create anything with ACF Repeater
               </h2>
 
               {/* Use Case Cards Grid */}
-              <div className="rp-usecase-grid">
+              <div className="rp-usecase-grid" data-rp-reveal-group>
                 {/* Team Members Card */}
-                <article className="rp-usecase-card">
+                <article className="rp-usecase-card" data-rp-reveal>
                   <div className="rp-usecase-card-head">
                     <div className="rp-usecase-icon">
                       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -636,7 +703,7 @@ export default function RepeaterPluginsPage() {
                 </article>
 
                 {/* Testimonials Card */}
-                <article className="rp-usecase-card">
+                <article className="rp-usecase-card" data-rp-reveal>
                   <div className="rp-usecase-card-head">
                     <div className="rp-usecase-icon">
                       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -663,7 +730,7 @@ export default function RepeaterPluginsPage() {
                 </article>
 
                 {/* FAQs Card */}
-                <article className="rp-usecase-card">
+                <article className="rp-usecase-card" data-rp-reveal>
                   <div className="rp-usecase-card-head">
                     <div className="rp-usecase-icon">
                       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -689,7 +756,7 @@ export default function RepeaterPluginsPage() {
                 </article>
 
                 {/* Pricing Tables Card */}
-                <article className="rp-usecase-card">
+                <article className="rp-usecase-card" data-rp-reveal>
                   <div className="rp-usecase-card-head">
                     <div className="rp-usecase-icon">
                       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -710,7 +777,7 @@ export default function RepeaterPluginsPage() {
                 </article>
 
                 {/* Gallery Card */}
-                <article className="rp-usecase-card">
+                <article className="rp-usecase-card" data-rp-reveal>
                   <div className="rp-usecase-card-head">
                     <div className="rp-usecase-icon">
                       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -735,7 +802,7 @@ export default function RepeaterPluginsPage() {
                 </article>
 
                 {/* Blog Card */}
-                <article className="rp-usecase-card">
+                <article className="rp-usecase-card" data-rp-reveal>
                   <div className="rp-usecase-card-head">
                     <div className="rp-usecase-icon">
                       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -778,19 +845,19 @@ export default function RepeaterPluginsPage() {
               {/* Top Advanced Feature Area */}
               <div className="rp-advanced-top">
                 <div className="rp-advanced-left">
-                  <div className="rp-advanced-mini-badge">
+                  <div className="rp-advanced-mini-badge" data-rp-reveal>
                     <span aria-hidden="true">✦</span>
                     Why Choose Repeater Builder?
                   </div>
 
-                  <h2 className="rp-advanced-title" id="rp-advanced-title">
+                  <h2 className="rp-advanced-title" id="rp-advanced-title" data-rp-reveal>
                     The most advanced ACF Repeater
                     <br />
                     solution for Elementor
                   </h2>
 
-                  <div className="rp-advanced-list">
-                    <div className="rp-advanced-list-item">
+                  <div className="rp-advanced-list" data-rp-reveal-group>
+                    <div className="rp-advanced-list-item" data-rp-reveal>
                       <span className="rp-orange-check">✓</span>
                       <div>
                         <h3>Native Elementor experience</h3>
@@ -798,7 +865,7 @@ export default function RepeaterPluginsPage() {
                       </div>
                     </div>
 
-                    <div className="rp-advanced-list-item">
+                    <div className="rp-advanced-list-item" data-rp-reveal>
                       <span className="rp-orange-check">✓</span>
                       <div>
                         <h3>Real-time preview</h3>
@@ -806,7 +873,7 @@ export default function RepeaterPluginsPage() {
                       </div>
                     </div>
 
-                    <div className="rp-advanced-list-item">
+                    <div className="rp-advanced-list-item" data-rp-reveal>
                       <span className="rp-orange-check">✓</span>
                       <div>
                         <h3>Performance optimized</h3>
@@ -814,7 +881,7 @@ export default function RepeaterPluginsPage() {
                       </div>
                     </div>
 
-                    <div className="rp-advanced-list-item">
+                    <div className="rp-advanced-list-item" data-rp-reveal>
                       <span className="rp-orange-check">✓</span>
                       <div>
                         <h3>Works with any theme</h3>
@@ -825,7 +892,7 @@ export default function RepeaterPluginsPage() {
                 </div>
 
                 {/* Elementor Style Settings Card */}
-                <div className="rp-builder-settings-card">
+                <div className="rp-builder-settings-card" data-rp-reveal data-rp-reveal-delay="160">
                   <div className="rp-settings-head">
                     <span>Repeater Builder</span>
                     <i aria-hidden="true">⋮</i>
@@ -870,7 +937,7 @@ export default function RepeaterPluginsPage() {
                 </div>
 
                 {/* Client Review Card */}
-                <article className="rp-client-review-card">
+                <article className="rp-client-review-card" data-rp-reveal data-rp-reveal-delay="260">
                   <h3>Client Review</h3>
 
                   <div className="rp-client-avatar" />
@@ -891,15 +958,15 @@ export default function RepeaterPluginsPage() {
 
               {/* Users Review Area */}
               <div className="rp-users-review-area">
-                <div className="rp-advanced-mini-badge">
+                <div className="rp-advanced-mini-badge" data-rp-reveal>
                   <span aria-hidden="true">✦</span>
                   Loved by Web Creators
                 </div>
 
-                <h2 className="rp-users-review-title">What our users are saying</h2>
+                <h2 className="rp-users-review-title" data-rp-reveal>What our users are saying</h2>
 
-                <div className="rp-users-review-grid">
-                  <article className="rp-user-review-card">
+                <div className="rp-users-review-grid" data-rp-reveal-group>
+                  <article className="rp-user-review-card" data-rp-reveal>
                     <div className="rp-review-quote">“</div>
                     <p>
                       This plugin is a game changer! Building dynamic layouts with ACF Repeater
@@ -916,7 +983,7 @@ export default function RepeaterPluginsPage() {
                     </div>
                   </article>
 
-                  <article className="rp-user-review-card">
+                  <article className="rp-user-review-card" data-rp-reveal>
                     <div className="rp-review-quote">“</div>
                     <p>
                       Clean UI, powerful features and excellent support. Highly recommended!
@@ -932,7 +999,7 @@ export default function RepeaterPluginsPage() {
                     </div>
                   </article>
 
-                  <article className="rp-user-review-card">
+                  <article className="rp-user-review-card" data-rp-reveal>
                     <div className="rp-review-quote">“</div>
                     <p>
                       Finally, a repeater solution that works perfectly with Elementor. Love it!
@@ -951,7 +1018,7 @@ export default function RepeaterPluginsPage() {
               </div>
 
               {/* Pricing CTA Area */}
-              <div className="rp-final-pricing-box" id="pricing">
+              <div className="rp-final-pricing-box" id="pricing" data-rp-reveal>
                 <div className="rp-pricing-content-left">
                   <span>Simple pricing, powerful value</span>
                   <h2>One plan. Unlimited possibilities.</h2>
@@ -991,9 +1058,9 @@ export default function RepeaterPluginsPage() {
       <footer className="rp-site-footer" aria-labelledby="rp-footer-brand-title">
         <div className="rp-footer-shell">
           {/* Footer Top Area */}
-          <div className="rp-footer-top">
+          <div className="rp-footer-top" data-rp-reveal-group>
             {/* Footer Brand Column */}
-            <div className="rp-footer-brand-col">
+            <div className="rp-footer-brand-col" data-rp-reveal>
               <a className="rp-footer-brand" href="#start" aria-label="Repeater Builder home">
                 <span className="rp-footer-brand-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none">
@@ -1048,7 +1115,7 @@ export default function RepeaterPluginsPage() {
             </div>
 
             {/* Product Column */}
-            <div className="rp-footer-links-col">
+            <div className="rp-footer-links-col" data-rp-reveal>
               <h3>Product</h3>
               <ul>
                 <li><a href="#features">Features</a></li>
@@ -1060,7 +1127,7 @@ export default function RepeaterPluginsPage() {
             </div>
 
             {/* Resources Column */}
-            <div className="rp-footer-links-col" id="docs">
+            <div className="rp-footer-links-col" id="docs" data-rp-reveal>
               <h3>Resources</h3>
               <ul>
                 <li><a href="#docs">Documentation</a></li>
@@ -1072,7 +1139,7 @@ export default function RepeaterPluginsPage() {
             </div>
 
             {/* Company Column */}
-            <div className="rp-footer-links-col">
+            <div className="rp-footer-links-col" data-rp-reveal>
               <h3>Company</h3>
               <ul>
                 <li><a href="#start">About Us</a></li>
@@ -1084,7 +1151,7 @@ export default function RepeaterPluginsPage() {
             </div>
 
             {/* Subscribe Column */}
-            <div className="rp-footer-subscribe-col">
+            <div className="rp-footer-subscribe-col" data-rp-reveal>
               <h3>Stay in the loop</h3>
               <p>Get product updates and tips straight to your inbox.</p>
 
@@ -1099,7 +1166,7 @@ export default function RepeaterPluginsPage() {
           </div>
 
           {/* Footer Bottom Area */}
-          <div className="rp-footer-bottom">
+          <div className="rp-footer-bottom" data-rp-reveal>
             <p>© 2024 Repeater Builder. All rights reserved.</p>
           </div>
         </div>

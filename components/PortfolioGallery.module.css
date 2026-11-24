@@ -41,7 +41,7 @@
 
 .portfolioHeading {
   max-width: 900px;
-  margin: 0;
+  margin: 0 0 28px;
   color: #ffffff;
   font-family: var(--font-oswald), sans-serif;
   font-size: clamp(36px, 6vw, 72px);
@@ -51,12 +51,26 @@
   text-transform: uppercase;
 }
 
+.portfolioLabel {
+  margin: 0 0 20px;
+  color: var(--portfolio-yellow);
+  font-family: var(--font-barlow-condensed), sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
 .portfolioIntro {
   max-width: 600px;
-  margin: 28px auto 34px;
+  margin: 0 auto 34px;
   color: rgba(255, 255, 255, 0.45);
   font-size: 16px;
   line-height: 1.8;
+}
+
+.portfolioIntroFallback {
+  display: none;
 }
 
 .filterButtons {
